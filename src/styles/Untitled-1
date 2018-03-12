@@ -1,0 +1,26 @@
+<View style={css.containerOfInsuranceCardBoxMoreInformations}>
+            <View style={css.rowOfButtons} >
+
+              <View style={css.borderGreenOfButton}>
+                <Text style={css.textOfButtonInCircleGreen}>
+                  Apolice
+                                </Text>
+              </View>
+
+              <View style={css.borderGreenOfButton}>
+                <Text style={css.textOfButtonInCircleGreen}>
+                  Faturas
+                                </Text>
+              </View>
+
+              <View style={css.borderGreenOfButton}>
+                <TouchableHighlight onPress={this._toggleModal} >
+                  <Text style={css.textOfButtonInCircleGreen}>
+                    Cobertura
+                                    </Text>
+                </TouchableHighlight>
+
+              </View>
+
+            </View>
+          </View>
