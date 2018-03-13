@@ -14,8 +14,8 @@ import Broker from './components/broker/Broker';
 
 export default props => (
   <Router>
-    {/* <Scene key="intro" component={Intro} hideNavBar /> */}
-    {/* <Scene key="login" component={Login} hideNavBar /> */}
+     <Scene key="intro" component={Intro} hideNavBar />
+     <Scene key="login" component={Login} hideNavBar />
     <Scene key="main" component={App} hideNavBar initil />
     <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar={false} />
     {/* <Scene key='insurer' component={ Insurer } title="Brasal Seguradora" hideNavBar={ false }/>
