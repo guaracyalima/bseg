@@ -63,6 +63,6 @@ const css = StyleSheet.create({
     width: 253,
     height: 75
   }
-})
+});
 
 export default css

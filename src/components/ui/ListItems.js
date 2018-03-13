@@ -10,7 +10,7 @@ import Items from './Items'
 export default class ListItems extends Component {
 
   constructor(props){
-    super(props)
+    super(props);
     this.state = { listaItems: [] }
   }
 
@@ -46,4 +46,4 @@ const css = StyleSheet.create({
     backgroundColor: '#ddd',
     paddingTop: 10
   }
-})
+});

@@ -9,34 +9,36 @@ import Toaster, { ToastStyles } from 'react-native-toaster'
 import css from '../styles/login-styles'
 
 const logo = require('../../assets/img/logo/logo.png');
-const bg = require('../../assets/img/bg/login/login.jpg')
+const bg = require('../../assets/img/bg/login/login.jpg');
 
 //environiment 
 import { dev } from '../../env'
 export default class Login extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { username: '', password: '', loaded: true, message: null }
-    this.auth = this.auth.bind(this)
-  }
+  0;
 
   componentWillMount() {
     firebase.initializeApp(dev);
   }
-  0
+  
+  constructor(props) {
+    super(props);
+    this.state = {username: '', password: '', loaded: true, message: null};
+    this.auth = this.auth.bind(this)
+  }
+
   auth() {
-    let email = "guaracyaraujolima@gmail.com"
-    let senha = "123456"
-    const usuario = firebase.auth()
+    let email = "guaracyaraujolima@gmail.com";
+    let senha = "123456";
+    const usuario = firebase.auth();
     usuario.signInWithEmailAndPassword(email, senha)
       .then((res) => {
         // console.log( Actions );
-        Actions.main()
+        Actions.main();
         alert('Bem vindo á Brasal Corretora')
       })
       .catch((error) => {
-        let code = error.code
-        let message = error.message
+        let code = error.code;
+        let message = error.message;
         alert(`Houve um erro ao logar-se ${message}`)
       })
   }

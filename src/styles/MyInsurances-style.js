@@ -4,18 +4,15 @@ const css = StyleSheet.create({
   cardBoxOfInsurance: {
     backgroundColor: '#fff',
     marginTop: 10,
-    borderRadius: 5,
-    marginLeft: 7,
-    marginRight: 10,
-    height: 145,
+    borderRadius: 20,
+    marginLeft: 40,
+    marginRight: 40,
     borderColor: '#000',
     shadowColor: '#000',
     shadowRadius: 5,
     shadowOpacity: 0.5,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
+    shadowOffset: {width: 0, height: 1},
+    flex: 1,
   },
   container: {
     marginTop: 15,
@@ -25,9 +22,13 @@ const css = StyleSheet.create({
     height: 50,
   },
   textOfNameOfInsurance: {
-    fontSize: 16,
-    color: '#000',
+    fontSize: 18,
     marginTop: 10,
+    textAlign: 'center',
+    color: '#B6BAB5',
+    backgroundColor: 'transparent',
+    fontFamily: 'arial',
+    fontWeight: '600',
   },
   headerOfInsuranceCardBox: {
     flex: 1,
@@ -77,24 +78,30 @@ const css = StyleSheet.create({
   detalhes: {
     fontSize: 16,
   },
-  buttons: {
-    justifyContent: 'space-around',
-    flexDirection: 'row',
-    alignItems: 'center',
+  insurerMinimalInformations: {
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: '#00645D',
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 50,
+    marginRight: 50,
+  },
+  assetsAndInsurerInformations: {
+    marginTop: 1,
+    textAlign: 'center',
     backgroundColor: 'transparent',
+    fontWeight: '600',
+    fontFamily: 'arial',
+    color: '#B6BAB5',
   },
-  buttomItem: {
-    fontSize: 10,
-    color: '#000',
+  viewOfApoliceNumberAnDates: {
+    backgroundColor: 'transparent',
+    alignItems: 'center',
   },
-  viewOfInitialsDetailsOfInsurance: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-  },
-  itemOfInitialDetailOfInsurance: {
-    fontSize: 14,
-    color: 'blue',
+  merosMortais: {
+    fontWeight: '300',
+    color: '#858b84',
   },
   coverages: {
     marginTop: 25,

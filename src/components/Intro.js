@@ -4,23 +4,23 @@ import AppIntro from 'react-native-app-intro';
 import { Actions } from 'react-native-router-flux';
 
 //import images
-const female = require('../../assets/img/bg/login/login.jpg')
+const female = require('../../assets/img/bg/login/login.jpg');
 export default class Intro extends Component {
   onSkipBtnHandle = (index) => {
     Actions.login();
     // Alert.alert('Pulou a intro');
     // console.log(index);
-  }
+  };
   doneBtnHandle = () => {
     Actions.login();
-  }
+  };
   nextBtnHandle = (index) => {
     Alert.alert('Promxima pagina');
     console.log(index);
-  }
+  };
   onSlideChangeHandle = (index, total) => {
     console.log(index, total);
-  }
+  };
   render() {
     const pageArray = [{
       title: 'Brasal Seguradora',

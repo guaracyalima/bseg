@@ -6,12 +6,12 @@ import { GiftedChat } from 'react-native-gifted-chat'
 //styles
 import css from '../../styles/insuser-style'
 
-const logo = require('../../../assets/img/logo/logo.png')
+const logo = require('../../../assets/img/logo/logo.png');
 
 export default class Attendance extends Component {
     state = {
         messages: [],
-      }
+    };
     
       componentWillMount() {
         this.setState({
