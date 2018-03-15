@@ -126,6 +126,10 @@ const css = StyleSheet.create({
     marginBottom: 5,
     flex: 1,
   },
+  bottomModal: {
+    justifyContent: 'flex-end',
+    margin: 0,
+  },
 });
 
 export default css;

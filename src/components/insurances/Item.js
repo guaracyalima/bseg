@@ -5,19 +5,22 @@ import {
   View,
   Image,
   Button,
-  Modal,
   TouchableHighlight,
+  TouchableOpacity,
   ScrollView,
   
 } from 'react-native';
+import Modal from "react-native-modal";
 import css from '../../styles/MyInsurances-style';
 
 const car = require('../../../assets/img/icons/sports-car.png');
 import axios from 'axios';
+import styles from "../app.style";
 
 export default class Items extends Component {
   state = {
-    modalVisible: false
+    modalVisible: false,
+    visibleModal: null
   };
   listCoverage = this.props.item.coverage.map((c) => {
     return (
@@ -50,6 +53,53 @@ export default class Items extends Component {
       .catch(err => console.log('erro ao trazer dados', err));
   }
   
+  _renderButton = (text, onPress) => (
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.button}>
+        <Text>{text}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+  
+  _renderModalContent = () => (
+    <View style={styles.modalContent}>
+    
+      <ScrollView>
+        <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
+        <Text>Seguradora: {this.props.item.insurer}</Text>
+        <Text>Central de atendimento: {this.props.item.insurer}</Text>
+      
+        <Text style={css.titlesOfDetailsOfInsurance}>Bem</Text>
+        <Text>Veiculo segurado: {this.props.item.veichle}</Text>
+        <Text>Placa: {this.props.item.board}</Text>
+        <Text>Final da vigencia: {this.props.item.validity}</Text>
+        <Text>Apolice: {this.props.item.apoliceNumber}</Text>
+      
+        <Text style={css.titlesOfDetailsOfInsurance}>Apolice</Text>
+        <Text>Apolice: {this.props.item.apoliceNumber}</Text>
+      
+        <Text style={css.titlesOfDetailsOfInsurance}>Dados de pagamento</Text>
+        <View>
+          <Text>Parcela </Text>
+          <Text>Vencimento </Text>
+          <Text>Valor </Text>
+        </View>
+      
+        <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
+        {this.listCoverage}
+      
+        <TouchableHighlight onPress={() => {
+          this.toggleModal(!this.state.modalVisible)
+        }}>
+          <Text style={css.btCloseModalOfDetailInsurance}>Fechar</Text>
+        </TouchableHighlight>
+    
+      </ScrollView>
+      {this._renderButton("FECHAR", () => this.setState({ visibleModal: null }))}
+    </View>
+  );
+  
+  
   render() {
     return (
       <View style={css.container}>
@@ -80,50 +130,23 @@ export default class Items extends Component {
               accessibilityLabel={'Cobertura dos meus seguros'}
               color={'#B6BAB5'}
               onPress={() => {
-                this.show(this.props.item.id), this.toggleModal(true)
+                this.show(this.props.item.id), this.setState({ visibleModal: 7 }) //this.toggleModal(true)
               }}/>
           </View>
-          
-          
-        
         </View>
   
-        <Modal animationType={"slide"} transparent={false}
-               visible={this.state.modalVisible}
-               onRequestClose={() => {
-                 console.log("Modal has been closed.")
-               }}>
-          <ScrollView style={css.coverages}>
-            <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
-            <Text>Seguradora: {this.props.item.insurer}</Text>
-            <Text>Central de atendimento: {this.props.item.insurer}</Text>
-      
-            <Text style={css.titlesOfDetailsOfInsurance}>Bem</Text>
-            <Text>Veiculo segurado: {this.props.item.veichle}</Text>
-            <Text>Placa: {this.props.item.board}</Text>
-            <Text>Final da vigencia: {this.props.item.validity}</Text>
-            <Text>Apolice: {this.props.item.apoliceNumber}</Text>
-      
-            <Text style={css.titlesOfDetailsOfInsurance}>Apolice</Text>
-            <Text>Apolice: {this.props.item.apoliceNumber}</Text>
-      
-            <Text style={css.titlesOfDetailsOfInsurance}>Dados de pagamento</Text>
-            <View>
-              <Text>Parcela </Text>
-              <Text>Vencimento </Text>
-              <Text>Valor </Text>
-            </View>
-      
-            <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
-            {this.listCoverage}
-      
-            <TouchableHighlight onPress={() => {
-              this.toggleModal(!this.state.modalVisible)
-            }}>
-              <Text style={css.btCloseModalOfDetailInsurance}>Fechar</Text>
-            </TouchableHighlight>
-    
-          </ScrollView>
+        {/*<Modal animationType={"slide"} transparent={false}*/}
+               {/*style={css.bottomModal}*/}
+               {/*visible={this.state.visibleModal === 5}*/}
+               {/*onRequestClose={() => {*/}
+                 {/*console.log("Modal has been closed.")*/}
+               {/*}}>*/}
+        <Modal
+          isVisible={this.state.visibleModal === 7}
+          onSwipe={() => this.setState({ visibleModal: null })}
+          swipeDirection="left"
+        >
+          {this._renderModalContent()}
         </Modal>
       </View>
 
