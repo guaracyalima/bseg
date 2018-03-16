@@ -18,7 +18,7 @@ export default StyleSheet.create({
   modalContent: {
     backgroundColor: 'white',
     padding: 5,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     // alignItems: 'center',
     borderRadius: 15,
     borderColor: 'rgba(0, 0, 0, 0.1)',

@@ -18,12 +18,12 @@ export default props => (
     {/*<Scene key="intro" component={Intro} hideNavBar />*/}
     {/*<Scene key="login" component={Login} hideNavBar />*/}
     <Scene key="main" component={App} hideNavBar initil />
-    <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar={false} />
-    <Scene key="attendance" component={Attendance} title="Atendimento" hideNavBar={false} />
+    <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar />
+    {/*<Scene key="attendance" component={Attendance} title="Atendimento" hideNavBar={false} />*/}
     {/* <Scene key='notifications' component={ Notifications } title="Atendimento" hideNavBar={ false }/> */}
     {/* <Scene key='showinsurance' component={ ComponentDoSlider } hideNavBar={ true } /> *!/ */}
     {/* <Scene key='showinsurance' component={ ShowInsurances } hideNavBar={ true } /> */}
     {/*<Scene key="broker" component={Broker} hideNavBar={false}/>*/}
-    <Scene key="broker" component={InsuranceCard} hideNavBar={false} />
+    {/*<Scene key="broker" component={InsuranceCard} hideNavBar={false} />*/}
   </Router>
 );

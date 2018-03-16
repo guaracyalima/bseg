@@ -23,7 +23,7 @@ const css = StyleSheet.create({
   },
   textOfNameOfInsurance: {
     fontSize: 18,
-    marginTop: 10,
+    marginTop: 3,
     textAlign: 'center',
     color: '#B6BAB5',
     backgroundColor: 'transparent',
@@ -84,8 +84,8 @@ const css = StyleSheet.create({
     borderColor: '#00645D',
     marginTop: 5,
     marginBottom: 5,
-    marginLeft: 50,
-    marginRight: 50,
+    marginLeft: 10,
+    marginRight: 10,
   },
   assetsAndInsurerInformations: {
     marginTop: 1,
@@ -129,6 +129,11 @@ const css = StyleSheet.create({
   bottomModal: {
     justifyContent: 'flex-end',
     margin: 0,
+  },
+  nameAndIconOfInsurance: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 });
 
