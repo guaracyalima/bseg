@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TextInput, TouchableHighlight, Button, Image } from 'react-native'
+import { View, StatusBar } from 'react-native'
 import firebase from 'firebase'
 import { Actions } from 'react-native-router-flux'
 import Toaster, { ToastStyles } from 'react-native-toaster'
@@ -12,7 +12,7 @@ export default class Main extends Component{
   render(){
 
     return(
-      <Insurances />
+        <Insurances />
     )
   }
 }

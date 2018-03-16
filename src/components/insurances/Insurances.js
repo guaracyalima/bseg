@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, Image, ScrollView } from 'react-native';
+import { View, Text, StatusBar, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import css from '../../styles/main-styles';
@@ -15,6 +15,9 @@ export default class Insurances extends Component {
   render() {
     return (
       <ScrollView style={css.main}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <View style={css.featured}>
           <Text style={css.wellcomeClient}>Bem vindo, Raphael Sampaio</Text>
 
@@ -22,23 +25,23 @@ export default class Insurances extends Component {
           <View style={css.list_food}>
             <View style={css.list_food_item}>
               <View>
-                <TouchableHighlight onPress={() => { Actions.myinsurances(); }}>
+                <TouchableOpacity onPress={() => { Actions.myinsurances(); }}>
                   <Image source={insurances} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Seguros</Text>
               </View>
 
               <View>
-                <TouchableHighlight onPress={() => { Actions.notifications(); }}>
+                <TouchableOpacity onPress={() => { Actions.notifications(); }}>
                   <Image source={notification} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Notificações</Text>
               </View>
 
               <View>
-                <TouchableHighlight onPress={() => { Actions.light_lunch(); }}>
+                <TouchableOpacity onPress={() => { Actions.light_lunch(); }}>
                   <Image source={mail} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Mensagens</Text>
               </View>
             </View>
@@ -46,34 +49,34 @@ export default class Insurances extends Component {
             <View style={css.list_food_item}>
 
               <View>
-                <TouchableHighlight onPress={() => { Actions.broker(); }}>
+                <TouchableOpacity onPress={() => { Actions.broker(); }}>
                   <Image source={brasal} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Brasal</Text>
               </View>
 
 
               <View>
-                <TouchableHighlight onPress={() => { Actions.attendance(); }}>
+                <TouchableOpacity onPress={() => { Actions.attendance(); }}>
                   <Image source={attendiment} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Atendimento</Text>
               </View>
 
 
               <View>
-                <TouchableHighlight onPress={() => { Actions.snack(); }}>
+                <TouchableOpacity onPress={() => { Actions.snack(); }}>
                   <Image source={friend} style={css.list_food_item_image} />
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Indicar amigo</Text>
               </View>
 
             </View>
           </View>
 
-          <TouchableHighlight style={css.button} underlayColor="#328fe6" onPress={this.auth}>
+          <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.auth}>
             <Text style={css.label}>MINHA PROXIMA FATURA</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
 
         </View>
       </ScrollView>

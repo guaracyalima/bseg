@@ -63,8 +63,8 @@ export default class ResidentialInsurance extends Component {
   
   _renderModalContent = () => (
     <View style={styles.modalContent}>
-      
-      
+  
+      <ScrollView>
         <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
         <Text>Seguradora: {this.props.item.insurer}</Text>
         <Text>Central de atendimento: {this.props.item.insurer}</Text>
@@ -86,7 +86,7 @@ export default class ResidentialInsurance extends Component {
         
         <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
         {this.listCoverage}
-        
+      </ScrollView>
       {this._renderButton("FECHAR", () => this.setState({ visibleModal: null }))}
     </View>
   );

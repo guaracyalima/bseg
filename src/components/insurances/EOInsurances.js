@@ -84,9 +84,8 @@ export default class EOInsurances extends Component {
         
         <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
         {this.listCoverage}
-        {this._renderButton("FECHAR", () => this.setState({visibleModal: null}))}
-      
       </ScrollView>
+      {this._renderButton("FECHAR", () => this.setState({visibleModal: null}))}
     </View>
   );
   

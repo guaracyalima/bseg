@@ -18,10 +18,40 @@ import axios from 'axios';
 import styles from "../app.style";
 
 export default class LeaseBoundInsurance extends Component {
+  _renderModalContent = () => (
+    <View style={styles.modalContent}>
+      
+      <ScrollView>
+        <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
+        <Text>Seguradora: {this.props.item.insurer}</Text>
+        <Text>Central de atendimento: {this.props.item.insurer}</Text>
+        
+        <Text style={css.titlesOfDetailsOfInsurance}>Bem</Text>
+        <Text>Local de risco: {this.props.item.localeOfRisc}</Text>
+        <Text>Administrador: {this.props.item.administrator}</Text>
+        <Text>Duração do contrato: {this.props.item.duartion}</Text>
+        
+        <Text style={css.titlesOfDetailsOfInsurance}>Apolice</Text>
+        <Text>Apolice: {this.props.item.apoliceNumber}</Text>
+        
+        <Text style={css.titlesOfDetailsOfInsurance}>Dados de pagamento</Text>
+        <View>
+          <Text>Parcela </Text>
+          <Text>Vencimento </Text>
+          <Text>Valor </Text>
+        </View>
+        
+        <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
+        {this.listCoverage}
+      </ScrollView>
+      {this._renderButton("FECHAR", () => this.setState({visibleModal: null}))}
+    </View>
+  );
   state = {
     modalVisible: false,
     visibleModal: null
   };
+  
   listCoverage = this.props.item.coverage.map((c) => {
     return (
       <View style={css.viewOfCoveragesFor} key={c.id}>
@@ -58,36 +88,6 @@ export default class LeaseBoundInsurance extends Component {
         <Text>{text}</Text>
       </View>
     </TouchableOpacity>
-  );
-  
-  _renderModalContent = () => (
-    <View style={styles.modalContent}>
-      
-      <ScrollView>
-        <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
-        <Text>Seguradora: {this.props.item.insurer}</Text>
-        <Text>Central de atendimento: {this.props.item.insurer}</Text>
-        
-        <Text style={css.titlesOfDetailsOfInsurance}>Bem</Text>
-        <Text>Local de risco: {this.props.item.localeOfRisc}</Text>
-        <Text>Administrador: {this.props.item.administrator}</Text>
-        <Text>Duração do contrato: {this.props.item.duartion}</Text>
-        
-        <Text style={css.titlesOfDetailsOfInsurance}>Apolice</Text>
-        <Text>Apolice: {this.props.item.apoliceNumber}</Text>
-        
-        <Text style={css.titlesOfDetailsOfInsurance}>Dados de pagamento</Text>
-        <View>
-          <Text>Parcela </Text>
-          <Text>Vencimento </Text>
-          <Text>Valor </Text>
-        </View>
-        
-        <Text style={css.titlesOfDetailsOfInsurance}>Coberturas</Text>
-        {this.listCoverage}
-      </ScrollView>
-      {this._renderButton("FECHAR", () => this.setState({visibleModal: null}))}
-    </View>
   );
   
   __renderLeaseBoundInsurance = () => (
