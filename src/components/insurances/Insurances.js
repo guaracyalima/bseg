@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StatusBar, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StatusBar, Image, ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
+import axios from 'axios';
 import css from '../../styles/main-styles';
+import { api } from '../../../env';
 
 const insurances = require('../../../assets/img/icons/icon_seguros.png');
 const notification = require('../../../assets/img/icons/icon_notificacoes.png');
@@ -12,6 +13,27 @@ const attendiment = require('../../../assets/img/icons/icon_atendimento.png');
 const friend = require('../../../assets/img/icons/icon_indicacao.png');
 
 export default class Insurances extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: '', emial: '', cpf: '' };
+  }
+
+  async getToken() {
+    const value = await AsyncStorage.getItem('@MySuperStore:token');
+    await axios.get(`${api.apiUrl}/user`, { headers: { 'Authorization': `Bearer ${value}` } })
+      .then(res => {
+        this.setState({name: res.data.name, email: res.data.email, cpf: res.data.cpf })
+        console.log('statu', this.state)
+      })
+      .catch(error => console.log('erro ao trazer dados do usuario logado', error));
+  }
+
+  componentWillMount() {
+    setTimeout(() => {
+      this.getToken()
+    }, 1200)
+  }
+
   render() {
     return (
       <ScrollView style={css.main}>
@@ -19,7 +41,7 @@ export default class Insurances extends Component {
           barStyle="light-content"
         />
         <View style={css.featured}>
-          <Text style={css.wellcomeClient}>Bem vindo, Raphael Sampaio</Text>
+          <Text style={css.wellcomeClient}>Bem vindo, {this.state.name}</Text>
 
 
           <View style={css.list_food}>

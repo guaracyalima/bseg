@@ -1,11 +1,13 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
+
 const css = StyleSheet.create({
+  // logo: {
+  //   width: 10,
+  //   height: 100,
+  // },
   bg: {
     flex: 1,
-    width: null
-  },
-  logo: {
-
+    width: null,
   },
   container: {
     flex: 1,
@@ -15,7 +17,7 @@ const css = StyleSheet.create({
   loginCotainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   input: {
     width: 250,
@@ -40,7 +42,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 320
+    width: 320,
   },
   label: {
     width: 230,
@@ -48,21 +50,21 @@ const css = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     fontWeight: '600',
-    color: '#000'
+    color: '#000',
   },
   signup: {
     fontSize: 18,
     color: '#fff',
-    margin: 30
+    margin: 30,
   },
   logo: {
     marginTop: 70,
-    marginBottom: 40
+    marginBottom: 40,
   },
   logoImage: {
     width: 253,
-    height: 75
-  }
+    height: 75,
+  },
 });
 
-export default css
+export default css;
