@@ -17,6 +17,7 @@ class MyInsurances extends Component {
       lease: [],
       residential: [],
     };
+    console.log('props no my insurances', this.props)
   }
 
   componentWillMount() {
