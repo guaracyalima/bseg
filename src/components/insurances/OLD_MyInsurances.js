@@ -23,10 +23,10 @@ class OLD_MyInsurances extends Component {
         return (
             <Image source={{ uri: item }} style={ styles.logoStyle }/>
         );
-    }
+    };
 
     get pagination () {
-        const activeSlide  = 1
+      const activeSlide = 1;
         return (
             <Pagination
               dotsLength={ images.length }

@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux'
 //styles
 import css from '../../styles/insuser-style'
 
-const logo = require('../../../assets/img/logo/logo.png')
+const logo = require('../../../assets/img/logo/logo.png');
 
 export default class Insurer extends Component {
 

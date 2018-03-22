@@ -55,4 +55,4 @@ const estilos = StyleSheet.create({
   detalhes: {
     fontSize: 16
   }
-})
+});

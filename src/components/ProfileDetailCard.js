@@ -6,36 +6,34 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {
-  ThinGrayLine,
-  ThickGrayLine,
-} from './Lines';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 10,
-    paddingHorizontal: 16,
+    paddingHorizontal: 26,
     flexDirection: 'row',
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: '#BDC2C9',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
 export default ({ onPress }) => (
   <View style={styles.container}>
     <View style={{ flex: 1 }}>
-      <Text>Other detail</Text>
-      <Text>Other tretail</Text>
-      {/*<ThickGrayLine width={60} />*/}
-      {/*<ThinGrayLine width={120} />*/}
+      <Text>Agropecuario</Text>
+      <Text>Empresarial</Text>
+      <Text>E&O</Text>
+      <Text>Aeronáutico</Text>
     </View>
-    
-    <View style={{ flex: 1 }}>
-      <Text>Detalhe largao</Text>
-      <Text>Lorem ipsun</Text>
-      {/*<ThickGrayLine width={60} onPress={onPress} />*/}
-      {/*<ThinGrayLine width={120} />*/}
+
+    <View style={{ flex: 1}}>
+      <Text>Previdência</Text>
+      <Text>Residencial</Text>
+      <Text>Fiança Locatícia</Text>
+      <Text>Marítimo</Text>
     </View>
   </View>
 );

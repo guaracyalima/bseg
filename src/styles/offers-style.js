@@ -74,6 +74,6 @@ const css = StyleSheet.create({
     fontWeight: '600',
     color: '#fff'
   }
-})
+});
 
 export default css

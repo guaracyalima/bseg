@@ -1,6 +1,4 @@
-import React, {
-  Component,
-} from 'react';
+import React, { Component } from 'react';
 
 import {
   View,
@@ -14,48 +12,41 @@ import FoldView from 'react-native-foldview';
 import ProfileDetailCard from './ProfileDetailCard';
 import AdditionalInfoCard from './AdditionalInfoCard';
 
-import {
-  ThinGrayLine,
-  ThickDarkGrayLine,
-} from './Lines';
-
-
-//essa classe se vira pra renderizar os details
+// essa classe se vira pra renderizar os details
 
 export default class Row extends Component {
-  
   componentWillMount() {
     this.renderBackface = this.renderBackface.bind(this);
     this.renderInnerBackFace = this.renderInnerBackFace.bind(this);
   }
-  
+
   renderBlankFace() {
     return (
       <View
         style={{
-          backgroundColor: '#D6EFFF', //cor de fundo da abertura do card
+          backgroundColor: '#D6EFFF', // cor de fundo da abertura do card
           flex: 1,
         }}
       />
     );
   }
-  
+
   renderBackface() {
     const onPress = this.props.onPress;
     return (
       <View style={{ flex: 1 }}>
-        
+
         <FoldView
           renderFrontface={this.renderBlankFace}
           renderBackface={this.renderInnerBackFace}
         >
-          <AdditionalInfoCard onPress={onPress} />
+          <AdditionalInfoCard onPress={onPress} bk={this.props} />
         </FoldView>
-      
+
       </View>
     );
   }
-  
+
   renderInnerBackFace() {
     const onPress = this.props.onPress;
     return (
@@ -64,7 +55,7 @@ export default class Row extends Component {
           backgroundColor: '#fff',
           flex: 1,
           borderTopWidth: StyleSheet.hairlineWidth,
-          borderTopColor: '#BDC2C9', //cor da linha acima do botao de fechar
+          borderTopColor: '#BDC2C9', // cor da linha acima do botao de fechar
           borderBottomLeftRadius: 2,
           borderBottomRightRadius: 2,
         }}
@@ -89,15 +80,15 @@ export default class Row extends Component {
               Fechar
             </Text>
           </TouchableHighlight>
-        
+
         </View>
       </View>
     );
   }
-  
+
   render() {
     const onPress = this.props.onPress;
-    
+
     return (
       <View
         style={{
@@ -106,9 +97,9 @@ export default class Row extends Component {
           flexDirection: 'column',
         }}
       >
-        
+
         <View style={{ flex: 1 }} >
-          
+
           <View
             style={{
               flex: 1,
@@ -116,60 +107,46 @@ export default class Row extends Component {
               padding: 16,
             }}
           >
-            
-            <Text>All details of insurance</Text>
-            {/*<ThinGrayLine width={120} />*/}
-            
+
+            <Text style={{ textAlign: 'center' }}>Seguros</Text>
+
             <View
               style={{
                 marginTop: 10,
                 flexDirection: 'row',
               }}
             >
-              
-              <TouchableHighlight
-                onPress={onPress}
-              >
-                <View
-                  style={{
-                    width: 40,
-                    height: 40,
-                    marginRight: 10,
-                    backgroundColor: '#BDC2C9',
-                  }}
-                />
-              </TouchableHighlight>
-              
               <View
                 style={{
                   flex: 1,
-                  flexDirection: 'column',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
                 }}
               >
-                <Text>DeadFish</Text>
-                {/*<ThickDarkGrayLine width={200} />*/}
-                <ThinGrayLine width={120} />
+                <Text>Vida</Text>
+                <Text>Automóvel</Text>
+                <Text>Saúde</Text>
+                <Text>Odontológico</Text>
               </View>
-            
+
             </View>
-          
+
           </View>
-          
-          {/*renderiza a view de detalhes com botao fechar*/}
+
+          {/* renderiza a view de detalhes com botao fechar */}
           <View style={{ flex: 1 }}>
-            
+
             <FoldView
               renderFrontface={this.renderBlankFace}
               renderBackface={this.renderBackface}
             >
-              
               <ProfileDetailCard onPress={onPress} />
             </FoldView>
-          
+
           </View>
-        
+
         </View>
-      
+
       </View>
     );
   }

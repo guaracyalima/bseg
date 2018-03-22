@@ -1,81 +1,78 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, TextInput, TouchableHighlight, Button, Image } from 'react-native'
+import React, { Component } from 'react';
+import {
+  Alert,
+  View,
+  Text,
+  TextInput,
+  Button,
+  Image,
+  TouchableOpacity,
+  TouchableHighlight,
+  StatusBar,
+  AsyncStorage,
+} from 'react-native';
+import axios from 'axios';
+import { Actions } from 'react-native-router-flux';
+import css from '../styles/login-styles';
 
-import firebase from 'firebase'
-import { Actions } from 'react-native-router-flux'
-import Toaster, { ToastStyles } from 'react-native-toaster'
+const logo = require('../../assets/img/logo/fq.png');
+const bg = require('../../assets/img/bg/login/login.jpg');
 
-//import Styles
-import css from '../styles/login-styles'
-
-const logo = require('../../assets/img/logo/logo.png');
-const bg = require('../../assets/img/bg/login/login.jpg')
-
-//environiment 
-import { dev } from '../../env'
 export default class Login extends Component {
   constructor(props) {
-    super(props)
-    this.state = { username: '', password: '', loaded: true, message: null }
-    this.auth = this.auth.bind(this)
+    super(props);
+    this.state = { email: '', password: '' };
+    this.auth = this.auth.bind(this);
   }
 
-  componentWillMount() {
-    firebase.initializeApp(dev);
-  }
-  0
-  auth() {
-    let email = "guaracyaraujolima@gmail.com"
-    let senha = "123456"
-    const usuario = firebase.auth()
-    usuario.signInWithEmailAndPassword(email, senha)
-      .then((res) => {
-        // console.log( Actions );
-        Actions.main()
-        alert('Bem vindo á Brasal Corretora')
-      })
-      .catch((error) => {
-        let code = error.code
-        let message = error.message
-        alert(`Houve um erro ao logar-se ${message}`)
-      })
+  async auth() {
+    await axios.post('http://127.0.0.1:8000/api/authenticate', {
+      email: this.state.email,
+      password: this.state.password,
+    }).then((res) => {
+      AsyncStorage.setItem('@MySuperStore:token', res.data.success.token);
+      Actions.main();
+    })
+      .catch((err) => {
+        console.log('Erro ao se logar', err);
+      });
   }
 
   render() {
-
     return (
       <Image source={bg} style={css.bg}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <View style={css.loginCotainer}>
 
           <View style={css.logo}>
             <Image source={logo} style={css.logoImage} />
           </View>
 
-
           <TextInput
             style={css.input}
-            value={this.state.username}
-            onChangeText={(username) => this.setState({ username: username })}
-            placeholder={'Usuario'}
+            value={this.state.email}
+            onChangeText={email => this.setState({ email })}
+            placeholder="Usuario"
             multiline={false}
-            placeholderTextColor="#fff" />
+            placeholderTextColor="#fff"
+          />
 
           <TextInput
             style={css.input}
             value={this.state.password}
-            onChangeText={(password) => this.setState({ password: password })}
-            placeholder={'Senha'}
-            secureTextEntry={true}
+            onChangeText={password => this.setState({ password })}
+            placeholder="Senha"
+            secureTextEntry
             maxLength={12}
             multiline={false}
-            placeholderTextColor="#fff" />
+            placeholderTextColor="#fff"
+          />
 
-
-
-          <Toaster message={this.state.message} />
-          <TouchableHighlight style={css.button} underlayColor={'#328fe6'} onPress={this.auth}>
+          <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.auth}>
             <Text style={css.label}>ETRAR</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
 
           <TouchableHighlight onPress={() => Actions.signup()}>
             <Text style={css.signup}> Ainda não possui cadastro? registre-se</Text>
@@ -83,6 +80,6 @@ export default class Login extends Component {
         </View>
         {/* </View> */}
       </Image>
-    )
+    );
   }
 }

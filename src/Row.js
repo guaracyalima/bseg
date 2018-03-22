@@ -1,6 +1,4 @@
-import React, {
-  Component,
-} from 'react';
+import React, { Component } from 'react';
 
 import {
   LayoutAnimation,
@@ -13,6 +11,7 @@ import FoldView from 'react-native-foldview';
 import InfoCard from './components/InfoCard';
 import PhotoCard from './components/PhotoCard';
 import ProfileCard from './components/ProfileCard';
+import axios from 'axios';
 
 // Enable LayoutAnimation on Android
 if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -31,32 +30,30 @@ const Spacer = ({ height }) => (
 );
 
 export default class Row extends Component {
-  
   constructor(props) {
     super(props);
-    
     this.state = {
       expanded: false,
       height: ROW_HEIGHT,
     };
   }
-  
+
   componentWillMount() {
     this.flip = this.flip.bind(this);
     this.handleAnimationStart = this.handleAnimationStart.bind(this);
     this.renderFrontface = this.renderFrontface.bind(this);
     this.renderBackface = this.renderBackface.bind(this);
   }
-  
+
   flip() {
     this.setState({
       expanded: !this.state.expanded,
     });
   }
-  
+
   handleAnimationStart(duration, height) {
     const isExpanding = this.state.expanded;
-    
+
     const animationConfig = {
       duration,
       update: {
@@ -64,45 +61,43 @@ export default class Row extends Component {
         property: LayoutAnimation.Properties.height,
       },
     };
-    
+
     LayoutAnimation.configureNext(animationConfig);
-    
+
     this.setState({
       height,
     });
   }
-  
+
   renderFrontface() {
     return (
       <InfoCard onPress={this.flip} />
     );
   }
-  
+
   renderBackface() {
     return (
-      <ProfileCard onPress={this.flip} />
+      <ProfileCard onPress={this.flip} bk={this.props} />
     );
   }
-  
+
   render() {
     const { height } = this.state;
     const { zIndex } = this.props;
-    
+
     const spacerHeight = height - ROW_HEIGHT;
-    
+
     return (
       <View
         style={{
           flex: 1,
           zIndex,
-        }}
-      >
+        }}>
         <View
           style={{
             height: ROW_HEIGHT,
             margin: 10,
-          }}
-        >
+          }}>
           <FoldView
             expanded={this.state.expanded}
             onAnimationStart={this.handleAnimationStart}
@@ -110,11 +105,11 @@ export default class Row extends Component {
             renderBackface={this.renderBackface}
             renderFrontface={this.renderFrontface}
           >
-            <PhotoCard onPress={this.flip} />
+            <PhotoCard onPress={this.flip} bk={this.props} />
           </FoldView>
-        
+
         </View>
-        
+
         <Spacer height={spacerHeight} />
       </View>
     );
