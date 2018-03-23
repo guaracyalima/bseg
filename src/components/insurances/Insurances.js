@@ -47,7 +47,7 @@ export default class Insurances extends Component {
           <View style={css.list_food}>
             <View style={css.list_food_item}>
               <View>
-                <TouchableOpacity onPress={() => { Actions.myinsurances(); }}>
+                <TouchableOpacity onPress={() => { Actions.myinsurances({cpf: this.state.cpf}); }}>
                   <Image source={insurances} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Seguros</Text>
