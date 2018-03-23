@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, StatusBar, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, StatusBar, View, Text, AsyncStorage } from 'react-native';
 import axios from 'axios';
 import AutoInsuranceItem from './AutoInsuranceItem';
 import EOInsurances from './EOInsurances';
@@ -17,18 +17,19 @@ class MyInsurances extends Component {
       lease: [],
       residential: [],
     };
-    console.log('props no my insurances', this.props)
   }
 
-  componentWillMount() {
-    axios.get('http://127.0.0.1:8000/api/insured/1')
+  async componentWillMount() {
+    const value = await AsyncStorage.getItem('@MySuperStore:token');
+    const options = { headers: { Authorization: `Bearer ${value}` } };
+    await axios.get(`http://127.0.0.1:8000/api/insured/${this.props.cpf}`, options)
       .then((response) => {
         this.setState({ auto: response.data.auto });
         this.setState({ eo: response.data.eo });
         this.setState({ life: response.data.life });
         this.setState({ lease: response.data.lease });
         this.setState({ residential: response.data.residential });
-        console.log('state mysql', this.state)
+        console.log('state mysql', this.state);
       })
       .catch(err => console.log('erro ao trazer dados', err));
   }
@@ -44,7 +45,6 @@ class MyInsurances extends Component {
   }
   __renderBlockOfEOInsurance() {
     const { eo } = this.state;
-    console.log('a pora do EO', eo)
     if (eo.length !== 0) {
       return (
         eo.map(item => (<EOInsurances key={item.id} item={item} coverage={item.coverage} />))

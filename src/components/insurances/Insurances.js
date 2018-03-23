@@ -20,18 +20,21 @@ export default class Insurances extends Component {
 
   async getToken() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    await axios.get(`${api.apiUrl}/user`, { headers: { 'Authorization': `Bearer ${value}` } })
-      .then(res => {
-        this.setState({name: res.data.name, email: res.data.email, cpf: res.data.cpf })
-        console.log('statu', this.state)
+    console.log('token do camarada', value);
+    let options = { headers: { Authorization: `Bearer ${value}` } };
+    console.log('options', options)
+    await axios.get(`${api.apiUrl}/user`, options)
+      .then((res) => {
+        this.setState({ name: res.data.name, email: res.data.email, cpf: res.data.cpf });
+        console.log('statu', this.state);
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }
 
   componentWillMount() {
     setTimeout(() => {
-      this.getToken()
-    }, 1200)
+      this.getToken();
+    }, 1200);
   }
 
   render() {
@@ -47,7 +50,7 @@ export default class Insurances extends Component {
           <View style={css.list_food}>
             <View style={css.list_food_item}>
               <View>
-                <TouchableOpacity onPress={() => { Actions.myinsurances({cpf: this.state.cpf}); }}>
+                <TouchableOpacity onPress={() => { Actions.myinsurances({ cpf: this.state.cpf }); }}>
                   <Image source={insurances} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Seguros</Text>
