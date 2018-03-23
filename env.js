@@ -1,3 +1,5 @@
+import {AsyncStorage} from "react-native";
+
 export const dev = {
   apiKey: 'AIzaSyDI8ROzBz9ebNmBXkeCNuqZgRGaCcngGs4',
   authDomain: 'projeto-teste-4ed06.firebaseapp.com',

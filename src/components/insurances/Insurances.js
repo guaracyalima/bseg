@@ -20,13 +20,10 @@ export default class Insurances extends Component {
 
   async getToken() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    console.log('token do camarada', value);
     let options = { headers: { Authorization: `Bearer ${value}` } };
-    console.log('options', options)
     await axios.get(`${api.apiUrl}/user`, options)
       .then((res) => {
         this.setState({ name: res.data.name, email: res.data.email, cpf: res.data.cpf });
-        console.log('statu', this.state);
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }
@@ -45,8 +42,6 @@ export default class Insurances extends Component {
         />
         <View style={css.featured}>
           <Text style={css.wellcomeClient}>Bem vindo, {this.state.name}</Text>
-
-
           <View style={css.list_food}>
             <View style={css.list_food_item}>
               <View>
@@ -57,14 +52,14 @@ export default class Insurances extends Component {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => { Actions.notifications(); }}>
+                <TouchableOpacity onPress={() => { Actions.notifications({ cpf: this.state.cpf }); }}>
                   <Image source={notification} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Notificações</Text>
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => { Actions.light_lunch(); }}>
+                <TouchableOpacity onPress={() => { Actions.messages({ cpf: this.state.cpf }); }}>
                   <Image source={mail} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Mensagens</Text>
