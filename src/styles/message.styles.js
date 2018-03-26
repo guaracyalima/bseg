@@ -40,6 +40,18 @@ const css = StyleSheet.create({
     fontSize: 10,
     color: '#B7B7B7',
   },
+  input: {
+    color: '#fff',
+    padding: 10,
+    height: 50,
+    borderColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 25,
+    alignSelf: 'center',
+    backgroundColor: 'transparent',
+    marginBottom: 15,
+    width: 320,
+  },
 });
 
 export default css;
