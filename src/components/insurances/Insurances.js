@@ -85,7 +85,7 @@ export default class Insurances extends Component {
 
 
               <View>
-                <TouchableOpacity onPress={() => { Actions.snack(); }}>
+                <TouchableOpacity onPress={() => { Actions.friendly(); }}>
                   <Image source={friend} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Indicar amigo</Text>

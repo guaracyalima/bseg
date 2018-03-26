@@ -12,6 +12,7 @@ import Intro from './components/Intro';
 import InsuranceCard from './InsuranceCard';
 import Broker from './components/broker/Broker';
 import Messages from "./components/messages/Messages";
+import Friendly from "./components/friendly/Friendly";
 // import TestComponent from "./components/TestComponent";
 
 export default props => (
@@ -21,10 +22,9 @@ export default props => (
     <Scene key="main" component={App} hideNavBar initil />
     <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar={false}  navigationBarStyle={{backgroundColor: '#8ad57b'}} />
     <Scene key="attendance" component={Attendance} title="Atendimento" hideNavBar={false} navigationBarStyle={{backgroundColor: '#8ad57b'}} />
-    {/*<Scene key="messages" component={Messages} title="Mensagens" hideNavBar={false} />*/}
+    <Scene key="messages" component={Messages} title="Mensagens" hideNavBar={false} />
      <Scene key='notifications' component={ Notification } title="Notificações" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}} />
-    {/* <Scene key='showinsurance' component={ ComponentDoSlider } hideNavBar={ true } /> *!/ */}
-    {/* <Scene key='showinsurance' component={ ShowInsurances } hideNavBar={ true } /> */}
-    {/*<Scene key="broker" component={InsuranceCard} hideNavBar={false} />*/}
+     <Scene key='friendly' component={ Friendly } title="Indicação" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}}  />
+    <Scene key="broker" component={InsuranceCard} hideNavBar={false} />
   </Router>
 );
