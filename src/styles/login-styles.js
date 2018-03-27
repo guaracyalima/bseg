@@ -62,7 +62,7 @@ const css = StyleSheet.create({
     marginBottom: 40,
   },
   logoImage: {
-    width: 253,
+    width: 355,
     height: 75,
   },
 });

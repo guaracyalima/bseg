@@ -3,6 +3,7 @@ package com.eat_for_me;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.imagepicker.ImagePickerPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFetchBlobPackage(),
             new ImagePickerPackage(),
             new RNCameraPackage(),
             new ReactNativePushNotificationPackage(),
