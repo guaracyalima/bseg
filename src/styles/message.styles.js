@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {PixelRatio, StyleSheet} from 'react-native';
 
 const css = StyleSheet.create({
   main: {
@@ -24,7 +24,7 @@ const css = StyleSheet.create({
     flex: 1
   },
   content: {
-    marginTop: 55,
+    marginTop: 85,
   },
   titleOfNotification: {
     fontSize: 20,
@@ -40,6 +40,16 @@ const css = StyleSheet.create({
     fontSize: 10,
     color: '#B7B7B7',
   },
+  formContainer: {
+    marginTop: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleOfPage: {
+    marginBottom: 5,
+    color: '#fff',
+    fontSize: 20,
+  },
   input: {
     color: '#fff',
     padding: 10,
@@ -51,6 +61,35 @@ const css = StyleSheet.create({
     backgroundColor: 'transparent',
     marginBottom: 15,
     width: 320,
+  },
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 25,
+    borderColor: '#8ad57b',
+    padding: 10,
+    marginTop: 60,
+    backgroundColor: '#8ad57b',
+    width: 320
+  },
+  label: {
+    width: 230,
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#fff'
+  },
+  avatarContainer: {
+    borderColor: '#9B9B9B',
+    borderWidth: 1 / PixelRatio.get(),
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  avatar: {
+    width: 30,
+    height: 30
   },
 });
 

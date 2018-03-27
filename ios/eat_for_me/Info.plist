@@ -31,7 +31,7 @@
 	<key>Item 3</key>
 	<string>MaterialIcons.ttf</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -46,7 +46,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway.ttf</string>
@@ -76,5 +76,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) Precisamos acessar sua galeria</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) Vou usar sua camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) Vou salvar fotos na sua galeria</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) Vou acessar seu microfone (para videos)</string>
 </dict>
 </plist>
