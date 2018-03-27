@@ -10,7 +10,7 @@ import {
 
 import {View, Assets, Constants, Card, Button, Colors, Typography, Text, TextArea} from 'react-native-ui-lib';
 import ImagePicker from 'react-native-image-picker';
-
+import RNFetchBlob from 'react-native-fetch-blob'
 import css from '../../styles/message.styles';
 import axios from 'axios/index';
 import { api } from '../../../env';
@@ -53,19 +53,36 @@ export default class Messages extends Component {
     let [a] = this.state.client
     this.setState({user_id: a.id})
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    await axios.post(`${api.apiUrl}/messages`, {
-        phone: this.state.phone,
-        message: this.state.message,
-        subject: this.state.subject,
-        attachmet: this.state.avatarSource,
-        user_id: this.state.user_id
-      },
-      { headers: { Authorization: `Bearer ${value}` } })
-      .then( res => {
-        console.log('Mensagem enviada com sucesso!')
-        this.setState({ phone: '', message: '', subject: '', attachmet: '', user_id: ''})
-      })
-      .catch( error => console.log('Erro ao enviar mensagem', error))
+    await RNFetchBlob.fetch(
+                              'POST',
+                              `${api.apiUrl}/messages`,
+                              { headers: { Authorization: `Bearer ${value}`, 'Content-Type' : 'application/octet-stream' } },
+                              {
+                                  phone: this.state.phone,
+                                  message: this.state.message,
+                                  subject: this.state.subject,
+                                  attachmet: this.state.avatarSource,
+                                  user_id: this.state.user_id
+                                }
+                                )
+                                .then( res => {
+                                  console.log('Mensagem enviada com sucesso!')
+                                  this.setState({ phone: '', message: '', subject: '', attachmet: '', user_id: ''})
+                                })
+                                .catch( error => console.log('Erro ao enviar mensagem', error))
+    // await axios.post(`${api.apiUrl}/messages`, {
+    //     phone: this.state.phone,
+    //     message: this.state.message,
+    //     subject: this.state.subject,
+    //     attachmet: this.state.avatarSource,
+    //     user_id: this.state.user_id
+    //   },
+    //   { headers: { Authorization: `Bearer ${value}` } })
+    //   .then( res => {
+    //     console.log('Mensagem enviada com sucesso!')
+    //     this.setState({ phone: '', message: '', subject: '', attachmet: '', user_id: ''})
+    //   })
+    //   .catch( error => console.log('Erro ao enviar mensagem', error))
   }
   
   
