@@ -91,6 +91,31 @@ const css = StyleSheet.create({
     width: 30,
     height: 30
   },
+  uploadButtons: {
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+  uploadBtn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 25,
+    borderColor: '#8ad57b',
+    padding: 10,
+    margin: 3,
+    backgroundColor: '#8ad57b',
+    width: 130
+  },
+  avatarContainer: {
+    borderColor: '#9B9B9B',
+    borderWidth: 1 / PixelRatio.get(),
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  avatar: {
+    width: 30,
+    height: 30
+  },
 });
 
 export default css;

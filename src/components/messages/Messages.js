@@ -29,7 +29,8 @@ export default class Messages extends Component {
                     videoSource: null
     };
     
-    this.__sendMessage = this.__sendMessage.bind(this)
+    this.__sendMessage = this.__sendMessage.bind(this);
+    this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
   }
 
   async __client_details() {
@@ -52,12 +53,11 @@ export default class Messages extends Component {
     let [a] = this.state.client
     this.setState({user_id: a.id})
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    
     await axios.post(`${api.apiUrl}/messages`, {
         phone: this.state.phone,
         message: this.state.message,
         subject: this.state.subject,
-        attachmet: this.state.attachmet,
+        attachmet: this.state.avatarSource,
         user_id: this.state.user_id
       },
       { headers: { Authorization: `Bearer ${value}` } })
@@ -68,21 +68,19 @@ export default class Messages extends Component {
       .catch( error => console.log('Erro ao enviar mensagem', error))
   }
   
-  //select photo from library
   
   selectPhotoTapped() {
     const options = {
+      title: 'Camera',
       quality: 1.0,
-      maxWidth: 500,
-      maxHeight: 500,
+      takePhotoButtonTitle: 'Tirar foto',
+      chooseFromLibraryButtonTitle: 'Buscar na galeria',
       storageOptions: {
         skipBackup: true
       }
     }
-  
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
-    
       if (response.didCancel) {
         console.log('User cancelled photo picker');
       }
@@ -93,13 +91,14 @@ export default class Messages extends Component {
         console.log('User tapped custom button: ', response.customButton);
       }
       else {
-        let source = { uri: response.uri };
+        //let source = { uri: response.uri };
+        
       
         // You can also display the image using data:
-        // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+         let source = { uri: 'data:image/jpeg;base64,' + response.data };
       
         this.setState({
-          avatarSource: source
+          avatarSource: source.uri
         });
       }
     });
@@ -107,9 +106,10 @@ export default class Messages extends Component {
   
   selectVideoTapped(){
     const options = {
-      title: 'Video Picker',
+      title: 'Camera',
       takePhotoButtonTitle: 'Gravar video',
-      mediaType: 'video',
+      chooseFromLibraryButtonTitle: 'Buscar na galeria',
+      //mediaType: 'video',
       videoQuality: 'medium',
     };
     
@@ -150,7 +150,7 @@ export default class Messages extends Component {
           <View style={css.formContainer}>
             
             <Text style={css.titleOfPage}>Nova mensagem</Text>
-            <Image style={css.avatar} source={this.state.avatarSource} />
+            <Image style={css.avatar} source={{uri: `${this.state.avatarSource}`}} />
             <TextInput
               style={css.input}
               value={this.state.phone}
@@ -187,14 +187,20 @@ export default class Messages extends Component {
                         multiline={true}
                         placeholderTextColor="#fff"/>
             </View>
-            
-            <TouchableOpacity underlayColor="#328fe6" onPress={this.selectPhotoTapped.bind(this)}>
-              <Text style={css.label}>Anexar foto</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity underlayColor="#328fe6" onPress={this.selectVideoTapped.bind(this)}>
-              <Text style={css.label}>Anexar video</Text>
-            </TouchableOpacity>
+  
+            <View style={css.uploadButtons}>
+              <View>
+                <TouchableOpacity underlayColor="#328fe6" onPress={this.selectPhotoTapped} style={css.uploadBtn}>
+                  <Text style={css.label}>Anexar foto</Text>
+                </TouchableOpacity>
+              </View>
+    
+              <View>
+                <TouchableOpacity underlayColor="#328fe6" onPress={this.selectVideoTapped} style={css.uploadBtn}>
+                  <Text style={css.label}>Anexar video</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
 
   
             <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.__sendMessage}>
