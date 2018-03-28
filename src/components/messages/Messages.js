@@ -27,7 +27,9 @@ export default class Messages extends Component {
                     user_id: '',
                     avatarSource: null,
                     videoSource: null,
-                    teste: null
+                    teste: null,
+                    lastConversation: [],
+                    replies: []
     };
     
     this.__sendMessage = this.__sendMessage.bind(this);
@@ -42,12 +44,44 @@ export default class Messages extends Component {
         this.setState({ client: res.data });
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
+  
+    await axios.get(`${api.apiUrl}/messages/my_messages/${this.props.user_id}`, { headers: { Authorization: `Bearer ${value}` } })
+      .then((res) => {
+        this.setState({ lastConversation: res.data, replies: res.data.replies });
+        console.log('minha ultima mensagem', this.state.lastConversation)
+      })
+      .catch(error => console.log('Erro ao buscar mensagens', error));
     
     console.log('esta states', this.state)
   }
 
   async componentWillMount() {
     await  this.__client_details();
+  }
+  
+  __renderReplies() {
+    const { replies } = this.state
+    if(replies !== 0){
+     return(
+       <View style={css.reply}>
+         <Text style={css.replyText}>{replies.body}</Text>
+       </View>
+     )
+    }
+  }
+  __renderHistoricalConversationCard(){
+    const { lastConversation } = this.state
+    return(
+      <View style={css.historicMessagesContainer}>
+    
+        <View style={css.sender}>
+          <Text style={css.senderText}>{lastConversation.message}</Text>
+        </View>
+  
+        {this.__renderReplies()}
+  
+      </View>
+    )
   }
 
   async __sendMessage() {
@@ -151,24 +185,34 @@ export default class Messages extends Component {
     })
   }
   
+  __renderImage(){
+    const { avatarSource } = this.state
+    if(avatarSource !== null){
+      return (
+        <Image style={css.avatar} source={{uri: `${this.state.avatarSource}`}} />
+      )
+    } else {
+      return false;
+    }
+  }
   render() {
     return (
       <ScrollView style={css.main}>
         <View style={css.content}>
-          {/*<Card*/}
-            {/*row // control the children flow direction*/}
-            {/*borderRadius={12}*/}
-            {/*height={150}*/}
-            {/*containerStyle={{marginRight: 20, marginLeft: 20}}>*/}
-            {/*<ScrollView>*/}
-              {/*<Text>XPTO</Text>*/}
-            {/*</ScrollView>*/}
-          {/*</Card>*/}
+          <Card
+            row // control the children flow direction
+            borderRadius={12}
+            height={150}
+            containerStyle={{marginRight: 20, marginLeft: 20}}>
+            <ScrollView>
+              {this.__renderHistoricalConversationCard()}
+            </ScrollView>
+          </Card>
   
           <View style={css.formContainer}>
             
             <Text style={css.titleOfPage}>Nova mensagem</Text>
-            <Image style={css.avatar} source={{uri: `${this.state.avatarSource}`}} />
+            {this.__renderImage()}
             <TextInput
               style={css.input}
               value={this.state.phone}

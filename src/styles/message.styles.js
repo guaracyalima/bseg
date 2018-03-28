@@ -130,6 +130,26 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     margin: 20
   },
+  historicMessagesContainer: {
+    margin: 10,
+    padding: 5,
+  },
+  sender: {
+    backgroundColor: '#ddf9c3',
+    alignItems: 'flex-end',
+  },
+  senderText: {
+    fontSize: 16,
+    color: '#00645D'
+  },
+  reply: {
+    backgroundColor: '#fff',
+    alignItems: 'flex-start',
+  },
+  replyText: {
+    fontSize: 16,
+    color: '#00645D'
+  },
 });
 
 export default css;

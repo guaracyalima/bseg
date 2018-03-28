@@ -15,7 +15,7 @@ const friend = require('../../../assets/img/icons/icon_indicacao.png');
 export default class Insurances extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: '', emial: '', cpf: '' };
+    this.state = { name: '', emial: '', cpf: '', user_id: '' };
   }
 
   async getToken() {
@@ -23,7 +23,8 @@ export default class Insurances extends Component {
     let options = { headers: { Authorization: `Bearer ${value}` } };
     await axios.get(`${api.apiUrl}/user`, options)
       .then((res) => {
-        this.setState({ name: res.data.name, email: res.data.email, cpf: res.data.cpf });
+        this.setState({ name: res.data.name, email: res.data.email, cpf: res.data.cpf, user_id: res.data.id });
+        console.log('dadasnijgksafngijkasjkdfgfd', res.data)
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }
@@ -59,7 +60,7 @@ export default class Insurances extends Component {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => { Actions.messages({ cpf: this.state.cpf }); }}>
+                <TouchableOpacity onPress={() => { Actions.messages({ cpf: this.state.cpf, user_id: this.state.user_id }); }}>
                   <Image source={mail} style={css.list_food_item_image} />
                 </TouchableOpacity>
                 <Text style={css.textOfDescriptionOfImage} >Mensagens</Text>

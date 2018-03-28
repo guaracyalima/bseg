@@ -23,8 +23,8 @@ export default props => (
     <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar={false}  navigationBarStyle={{backgroundColor: '#8ad57b'}} />
     <Scene key="attendance" component={Attendance} title="Atendimento" hideNavBar={false} navigationBarStyle={{backgroundColor: '#8ad57b'}} />
     <Scene key="messages" component={Messages} title="Mensagens" hideNavBar={false} navigationBarStyle={{backgroundColor: '#8ad57b'}}/>
-     {/*<Scene key='notifications' component={ Notification } title="Notificações" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}} />*/}
-     {/*<Scene key='friendly' component={ Friendly } title="Indicação" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}}  />*/}
-    {/*<Scene key="broker" component={InsuranceCard} hideNavBar={false} />*/}
+    <Scene key='notifications' component={ Notification } title="Notificações" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}} />
+    <Scene key='friendly' component={ Friendly } title="Indicação" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}}  />
+    <Scene key="broker" component={InsuranceCard} hideNavBar={false} />
   </Router>
 );
