@@ -8,14 +8,14 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   ScrollView,
-  
 } from 'react-native';
 import Modal from "react-native-modal";
 import css from '../../styles/MyInsurances-style';
-
 const car = require('../../../assets/img/icons/car_gray.png');
 import axios from 'axios';
 import styles from "../app.style";
+
+import { api } from "../../../env";
 
 export default class AutoInsuranceItem extends Component {
   state = {
@@ -41,13 +41,12 @@ export default class AutoInsuranceItem extends Component {
   }
   
   show(id) {
-    axios.get(`http://127.0.0.1:8000/api/auto/${id}`)
+    axios.get(`${api.apiUrl}/${id}`)
       .then((response) => {
         this.setState({
           insurance: response.data,
           coverage: response.data.coverage
         });
-        console.log('Insurrance show', this.state);
       })
       .catch(err => console.log('erro ao trazer dados', err));
   }

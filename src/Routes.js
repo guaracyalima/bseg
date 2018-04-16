@@ -13,18 +13,84 @@ import InsuranceCard from './InsuranceCard';
 import Broker from './components/broker/Broker';
 import Messages from "./components/messages/Messages";
 import Friendly from "./components/friendly/Friendly";
+import Register from "./components/Register";
 // import TestComponent from "./components/TestComponent";
 
 export default props => (
   <Router>
-    {/*<Scene key="intro" component={Intro} hideNavBar />*/}
-    <Scene key="login" component={Login} hideNavBar />
+    {/*<Scene key="login" component={Login} hideNavBar />*/}
+    {/*<Scene key="register" component={ Register } hideNavBar />*/}
     <Scene key="main" component={App} hideNavBar initil />
-    <Scene key="myinsurances" component={MyInsurances} title="Meus seguros" hideNavBar={false}  navigationBarStyle={{backgroundColor: '#8ad57b'}} />
-    <Scene key="attendance" component={Attendance} title="Atendimento" hideNavBar={false} navigationBarStyle={{backgroundColor: '#8ad57b'}} />
-    <Scene key="messages" component={Messages} title="Mensagens" hideNavBar={false} navigationBarStyle={{backgroundColor: '#8ad57b'}}/>
-    <Scene key='notifications' component={ Notification } title="Notificações" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}} />
-    <Scene key='friendly' component={ Friendly } title="Indicação" hideNavBar={ false } navigationBarStyle={{backgroundColor: '#8ad57b'}}  />
-    <Scene key="broker" component={InsuranceCard} hideNavBar={false} />
+    <Scene
+            key="myinsurances"
+            component={MyInsurances}
+            title="Meus seguros"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key="attendance"
+            component={Attendance}
+            title="Atendimento"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }} />
+      
+    <Scene
+            key="messages"
+            component={Messages}
+            title="Mensagens"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key='notifications'
+            component={ Notification }
+            title="Notificações"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key='friendly'
+            component={ Friendly }
+            title="Indicação"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+      key="broker"
+      title="Brasal Corretora"
+      component={InsuranceCard}
+      hideNavBar={false}
+      navigationBarStyle={{backgroundColor: '#005c5b'}}
+      titleStyle={{
+        fontSize: 22,
+        color: '#fff',
+      }}
+      leftButtonIconStyle={{ tintColor: 'white' }}/>
   </Router>
 );

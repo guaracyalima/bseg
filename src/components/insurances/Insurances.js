@@ -96,7 +96,7 @@ export default class Insurances extends Component {
           </View>
 
           <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.auth}>
-            <Text style={css.label}>MINHA PROXIMA FATURA</Text>
+            <Text style={css.label}>SOLICITAR FATURA</Text>
           </TouchableOpacity>
 
         </View>

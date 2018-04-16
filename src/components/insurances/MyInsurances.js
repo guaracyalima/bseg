@@ -6,6 +6,7 @@ import EOInsurances from './EOInsurances';
 import ResidentialInsurance from './Residential';
 import LifeInsurance from './Life';
 import LeaseBoundInsurance from './LeaseBound';
+import {api} from "../../../env";
 
 class MyInsurances extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class MyInsurances extends Component {
   async componentWillMount() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
     const options = { headers: { Authorization: `Bearer ${value}` } };
-    await axios.get(`http://127.0.0.1:8000/api/insured/${this.props.cpf}`, options)
+    await axios.get(`${api.apiUrl}/insured/${this.props.cpf}`, options)
       .then((response) => {
         this.setState({ auto: response.data.auto });
         this.setState({ eo: response.data.eo });

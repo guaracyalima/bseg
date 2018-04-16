@@ -16,6 +16,7 @@ import css from '../../styles/MyInsurances-style';
 const car = require('../../../assets/img/icons/car_gray.png');
 import axios from 'axios';
 import styles from "../app.style";
+import { api } from "../../../env";
 
 export default class EOInsurances extends Component {
   state = {
@@ -41,7 +42,7 @@ export default class EOInsurances extends Component {
   }
   
   show(id) {
-    axios.get(`http://127.0.0.1:8000/api/auto/${id}`)
+    axios.get(`${api.apiUrl}/${id}`)
       .then((response) => {
         this.setState({
           insurance: response.data,

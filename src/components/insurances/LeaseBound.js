@@ -16,6 +16,7 @@ import css from '../../styles/MyInsurances-style';
 const LEASE = require('../../../assets/img/icons/home_gray.png');
 import axios from 'axios';
 import styles from "../app.style";
+import { api } from "../../../env";
 
 export default class LeaseBoundInsurance extends Component {
   _renderModalContent = () => (
@@ -71,7 +72,7 @@ export default class LeaseBoundInsurance extends Component {
   }
   
   show(id) {
-    axios.get(`http://127.0.0.1:8000/api/auto/${id}`)
+    axios.get(`${api.apiUrl}/${id}`)
       .then((response) => {
         this.setState({
           insurance: response.data,

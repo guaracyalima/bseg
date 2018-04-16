@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import Row from './Row';
+import {api} from "../env";
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 
@@ -33,7 +34,7 @@ export default class InsuranceCard extends Component {
 
   async componentWillMount() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    axios.get('http://127.0.0.1:8000/api/broker', { headers: { Authorization: `Bearer ${value}` } })
+    axios.get(`${api.apiUrl}/broker`, { headers: { Authorization: `Bearer ${value}` } })
       .then((response) => {
         this.setState({ listBorker: response.data });
         console.log('corretora no infocard', response.data);

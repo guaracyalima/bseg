@@ -58,21 +58,19 @@ const css = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 25,
-    borderColor: '#8ad57b',
+    borderRadius: 10,
     padding: 10,
-    marginTop: 60,
+    marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 320
+    width: 320,
   },
   label: {
     width: 230,
     alignSelf: 'center',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: '600',
-    color: '#fff'
+    color: '#000',
   }
 });
 

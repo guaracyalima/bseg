@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, StatusBar, View, AsyncStorage } from 'react-native';
 import axios from 'axios';
 import BrokerItems from './BrokerItem';
+import {api} from "../../../env";
 
 class Broker extends Component {
   constructor(props) {
@@ -10,8 +11,12 @@ class Broker extends Component {
   }
 
   async componentWillMount() {
+    // const value = await AsyncStorage.getItem('@MySuperStore:token');
     const value = await AsyncStorage.getItem('@MySuperStore:token');
-    axios.get('http://127.0.0.1:8000/api/broker', { headers: { Authorization: `Bearer ${value}` } })
+    const options = { headers: { Authorization: `Bearer ${value}` } };
+    console.log('url', api.apiUrl)
+    console.log('options', options)
+    axios.get(`${api.apiUrl}/broker`, options)
       .then((response) => {
         this.setState({ listaItems: response.data });
         console.log('itmes in the list', this.state.listaItems)
