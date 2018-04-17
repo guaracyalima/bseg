@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {
+  AsyncStorage,
   Platform,
   ScrollView,
   StatusBar,
@@ -30,8 +31,9 @@ export default class InsuranceCard extends Component {
     this.state = { listBorker: [] };
   }
 
-  componentWillMount() {
-    axios.get('http://127.0.0.1:8000/api/broker')
+  async componentWillMount() {
+    const value = await AsyncStorage.getItem('@MySuperStore:token');
+    axios.get('http://127.0.0.1:8000/api/broker', { headers: { Authorization: `Bearer ${value}` } })
       .then((response) => {
         this.setState({ listBorker: response.data });
         console.log('corretora no infocard', response.data);

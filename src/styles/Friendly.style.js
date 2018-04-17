@@ -1,44 +1,35 @@
 import { StyleSheet } from 'react-native';
 
 const css = StyleSheet.create({
-  // logo: {
-  //   width: 10,
-  //   height: 100,
-  // },
-  bg: {
-    flex: 1,
-    width: null,
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
+    backgroundColor: '#126f69',
   },
-  loginCotainer: {
-    flex: 1,
+  formContainer: {
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   input: {
-    width: 250,
     color: '#fff',
     padding: 10,
     height: 50,
-    borderColor: '#126f69',
+    borderColor: '#fff',
     borderWidth: 1,
     borderRadius: 25,
     alignSelf: 'center',
     backgroundColor: 'transparent',
-    marginBottom: 8,
+    marginBottom: 15,
     width: 320,
-    // placeholderTextColor: '#fff'
   },
   button: {
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 25,
-    borderColor: '#328fe6',
+    borderColor: '#fff',
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
@@ -57,12 +48,16 @@ const css = StyleSheet.create({
     color: '#fff',
     margin: 30,
   },
-  logo: {
-    marginTop: 70,
-    marginBottom: 40,
+  descriptionOfView: {
+    marginTop: 30,
+    marginBottom: 10,
+    fontSize: 30,
+    color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
   logoImage: {
-    width: 355,
+    width: 253,
     height: 75,
   },
 });
