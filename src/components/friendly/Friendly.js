@@ -24,7 +24,7 @@ export default class Friendly extends Component {
         console.log('amigo indicado com sucesso!')
         this.setState({name: '', phone: '', email: '', message: ''})
       })
-      .catch( error => console.log('erro ao indicar amigo'))
+      .catch( error => console.log('erro ao indicar amigo', error))
   }
   render() {
     return (

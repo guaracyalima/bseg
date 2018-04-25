@@ -97,7 +97,6 @@ export default class Messages extends Component {
   async __sendMessage() {
     let [a] = this.state.client
     this.setState({user_id: 11})
-    //let attachment = RNFetchBlob.wrap(this.state.avatarSource)
     const value = await AsyncStorage.getItem('@MySuperStore:token');
     
     let body = new  FormData();
@@ -106,7 +105,6 @@ export default class Messages extends Component {
     body.append('message', this.state.message)
     body.append('subject', this.state.subject)
     body.append('user_id', this.state.user_id)
-    console.log('a boda', body)
     
     await axios.post(`${api.apiUrl}/messages`, body,
       { headers: { Authorization: `Bearer ${value}`} })
@@ -133,17 +131,13 @@ export default class Messages extends Component {
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
       if (response.didCancel) {
-        console.log('User cancelled photo picker');
       }
       else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
       }
       else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
       }
       else {
         let source = { uri: response.uri };
-        console.log('a foto', source.uri)
         // You can also display the image using data:
         //let source = { uri: 'data:image/jpeg;base64,' + response.data };
       
@@ -206,6 +200,7 @@ export default class Messages extends Component {
               onChangeText={phone => this.setState({ phone })}
               placeholder="Telefone de contato"
               multiline={false}
+              underlineColorAndroid="transparent"
               placeholderTextColor="#fff"
             />
   
@@ -215,6 +210,7 @@ export default class Messages extends Component {
               onChangeText={subject => this.setState({ subject })}
               placeholder="Assunto"
               multiline={true}
+              underlineColorAndroid="transparent"
               placeholderTextColor="#fff"/>
   
             <View
@@ -234,26 +230,27 @@ export default class Messages extends Component {
                         value={this.state.message}
                         onChangeText={text => this.setState({ message: text })}
                         multiline={true}
+                        underlineColorAndroid="transparent"
                         placeholderTextColor="#fff"/>
             </View>
   
             <View style={css.uploadButtons}>
               <View>
                 <TouchableOpacity underlayColor="#328fe6" onPress={this.selectPhotoTapped} style={css.uploadBtn}>
-                  <Text style={css.label}>Anexar foto</Text>
+                  <Text style={css.label}>ANEXAR FOTO</Text>
                 </TouchableOpacity>
               </View>
     
-              <View>
-                <TouchableOpacity underlayColor="#328fe6" onPress={this.__getPhotosFromgalery} style={css.uploadBtn}>
-                  <Text style={css.label}>Anexar video</Text>
-                </TouchableOpacity>
-              </View>
+              {/*<View>*/}
+                {/*<TouchableOpacity underlayColor="#328fe6" onPress={this.__getPhotosFromgalery} style={css.uploadBtn}>*/}
+                  {/*<Text style={css.label}>Anexar video</Text>*/}
+                {/*</TouchableOpacity>*/}
+              {/*</View>*/}
             </View>
 
   
             <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.__sendMessage}>
-              <Text style={css.label}>Enviar</Text>
+              <Text style={css.label}>ENVIAR</Text>
             </TouchableOpacity>
           </View>
 

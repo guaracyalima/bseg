@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "869549393928",
+    "firebase_url": "https://projeto-teste-4ed06.firebaseio.com",
+    "project_id": "projeto-teste-4ed06",
+    "storage_bucket": "projeto-teste-4ed06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869549393928:android:923a9eea7efc8471",
+        "android_client_info": {
+          "package_name": "br.com.brasal.appclientes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869549393928-11tkhtd7v5cu09k90tdoc8li0kldvc8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdyR_DEQkUnQSIdvmbLgHL2WCrYyUcJVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

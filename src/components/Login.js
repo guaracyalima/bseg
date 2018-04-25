@@ -14,6 +14,7 @@ import {
 import axios from 'axios';
 import { Actions } from 'react-native-router-flux';
 import css from '../styles/login-styles';
+import {api} from "../../env";
 
 const logo = require('../../assets/img/logo/fq.png');
 const bg = require('../../assets/img/bg/login/login.jpg');
@@ -26,7 +27,8 @@ export default class Login extends Component {
   }
 
   async auth() {
-    await axios.post('https://api-seguradora-staging.herokuapp.com/api/authenticate', {
+    await axios.post(`${api.apiUrl}/authenticate`, {
+    // await axios.post('https://api-seguradora-staging.herokuapp.com/api/authenticate', {
       email: this.state.email,
       password: this.state.password,
     }).then((res) => {
@@ -56,6 +58,7 @@ export default class Login extends Component {
             onChangeText={email => this.setState({ email })}
             placeholder="Usuario"
             multiline={false}
+            underlineColorAndroid="transparent"
             placeholderTextColor="#fff"
           />
 
@@ -67,6 +70,7 @@ export default class Login extends Component {
             secureTextEntry
             maxLength={12}
             multiline={false}
+            underlineColorAndroid="transparent"
             placeholderTextColor="#fff"
           />
 

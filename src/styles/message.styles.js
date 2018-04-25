@@ -79,7 +79,7 @@ const css = StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     fontWeight: '600',
-    color: '#fff'
+    color: '#000'
   },
   avatarContainer: {
     borderColor: '#9B9B9B',

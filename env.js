@@ -10,10 +10,10 @@ export const dev = {
 };
 
 export const api = {
-  apiUrl: 'https://api-seguradora-staging.herokuapp.com/api',
+  apiUrl: 'http://127.0.0.1:8000/api',
 };
-// apiUrl: 'http://127.0.0.1:8000/api',
-
+//apiUrl: 'http://127.0.0.1:8000/api',
+//apiUrl: 'https://api-seguradora-staging.herokuapp.com/api',
 export const pusher = {
   id: 'b1c9dfd0226ff506116d',
   cluster: 'us2',

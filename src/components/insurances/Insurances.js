@@ -24,7 +24,6 @@ export default class Insurances extends Component {
     await axios.get(`${api.apiUrl}/user`, options)
       .then((res) => {
         this.setState({ name: res.data.name, email: res.data.email, cpf: res.data.cpf, user_id: res.data.id });
-        console.log('dadasnijgksafngijkasjkdfgfd', res.data)
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }
