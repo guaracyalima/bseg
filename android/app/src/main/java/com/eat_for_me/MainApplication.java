@@ -3,6 +3,7 @@ package com.eat_for_me;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.soundapp.SoundModulePackage;
 import com.evollu.react.fcm.FIRMessagingPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SoundModulePackage(),
             new FIRMessagingPackage(),
             new ReactNativeOneSignalPackage(),
             new RNCameraPackage(),

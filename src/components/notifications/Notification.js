@@ -17,6 +17,7 @@ export default class Notification extends Component {
     await axios.get(`${api.apiUrl}/details/${this.props.cpf}`, { headers: { Authorization: `Bearer ${value}` } })
       .then((res) => {
         this.setState({ client: res.data });
+        console.log(this.state)
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }

@@ -11,7 +11,7 @@ const mail = require('../../../assets/img/icons/icon_mensagens.png');
 const brasal = require('../../../assets/img/icons/icon_brasal.png');
 const attendiment = require('../../../assets/img/icons/icon_atendimento.png');
 const friend = require('../../../assets/img/icons/icon_indicacao.png');
-
+const logo = require('../../../assets/img/logo/fq.png');
 export default class Insurances extends Component {
   constructor(props) {
     super(props);
@@ -41,6 +41,11 @@ export default class Insurances extends Component {
           barStyle="light-content"
         />
         <View style={css.featured}>
+  
+          <View style={css.logo}>
+            <Image source={logo} style={css.logoImage} />
+          </View>
+          
           <Text style={css.wellcomeClient}>Bem vindo, {this.state.name}</Text>
           <View style={css.list_food}>
             <View style={css.list_food_item}>
@@ -93,11 +98,7 @@ export default class Insurances extends Component {
 
             </View>
           </View>
-
-          <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.auth}>
-            <Text style={css.label}>SOLICITAR FATURA</Text>
-          </TouchableOpacity>
-
+          
         </View>
       </ScrollView>
     );

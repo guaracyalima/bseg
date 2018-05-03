@@ -24,6 +24,7 @@ const css = StyleSheet.create({
     marginBottom: 8,
     width: 320,
   },
+  
   button: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,16 +32,19 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 320,
+    width: 300,
+    height: 50,
   },
+  
   label: {
     width: 230,
     alignSelf: 'center',
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: '600',
-    color: '#000',
+    color: '#111f00',
   },
+  
   signup: {
     fontSize: 18,
     color: '#fff',
@@ -49,7 +53,7 @@ const css = StyleSheet.create({
   descriptionOfView: {
     marginTop: 30,
     marginBottom: 10,
-    fontSize: 30,
+    fontSize: 20,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center'

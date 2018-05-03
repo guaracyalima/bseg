@@ -19,22 +19,22 @@ import Kpo from "./push/Kpo";
 
 export default props => (
   <Router>
-    <Scene key="login" component={Login} hideNavBar />
+    {/*<Scene key="login" component={Login} hideNavBar />*/}
     {/*<Scene key="register" component={ Register } hideNavBar />*/}
     <Scene key="main" component={App} hideNavBar initil />
     {/*<Scene key="main" component={Kpo} hideNavBar initil />*/}
     
-    {/*<Scene*/}
-            {/*key="myinsurances"*/}
-            {/*component={MyInsurances}*/}
-            {/*title="Meus seguros"*/}
-            {/*hideNavBar={false}*/}
-            {/*navigationBarStyle={{backgroundColor: '#005c5b'}}*/}
-            {/*titleStyle={{*/}
-              {/*fontSize: 22,*/}
-              {/*color: '#fff',*/}
-            {/*}}*/}
-            {/*leftButtonIconStyle={{ tintColor: 'white' }}/>*/}
+    <Scene
+            key="myinsurances"
+            component={MyInsurances}
+            title="Meus seguros"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
       
     <Scene
             key="attendance"
@@ -48,52 +48,52 @@ export default props => (
             }}
             leftButtonIconStyle={{ tintColor: 'white' }} />
       
-    {/*<Scene*/}
-            {/*key="messages"*/}
-            {/*component={Messages}*/}
-            {/*title="Mensagens"*/}
-            {/*hideNavBar={false}*/}
-            {/*navigationBarStyle={{backgroundColor: '#005c5b'}}*/}
-            {/*titleStyle={{*/}
-              {/*fontSize: 22,*/}
-              {/*color: '#fff',*/}
-            {/*}}*/}
-            {/*leftButtonIconStyle={{ tintColor: 'white' }}/>*/}
-      {/**/}
-    {/*<Scene*/}
-            {/*key='notifications'*/}
-            {/*component={ Notification }*/}
-            {/*title="Notificações"*/}
-            {/*hideNavBar={false}*/}
-            {/*navigationBarStyle={{backgroundColor: '#005c5b'}}*/}
-            {/*titleStyle={{*/}
-              {/*fontSize: 22,*/}
-              {/*color: '#fff',*/}
-            {/*}}*/}
-            {/*leftButtonIconStyle={{ tintColor: 'white' }}/>*/}
-      {/**/}
-    {/*<Scene*/}
-            {/*key='friendly'*/}
-            {/*component={ Friendly }*/}
-            {/*title="Indicação"*/}
-            {/*hideNavBar={false}*/}
-            {/*navigationBarStyle={{backgroundColor: '#005c5b'}}*/}
-            {/*titleStyle={{*/}
-              {/*fontSize: 22,*/}
-              {/*color: '#fff',*/}
-            {/*}}*/}
-            {/*leftButtonIconStyle={{ tintColor: 'white' }}/>*/}
-      {/**/}
-    {/*<Scene*/}
-      {/*key="broker"*/}
-      {/*title="Brasal Corretora"*/}
-      {/*component={InsuranceCard}*/}
-      {/*hideNavBar={false}*/}
-      {/*navigationBarStyle={{backgroundColor: '#005c5b'}}*/}
-      {/*titleStyle={{*/}
-        {/*fontSize: 22,*/}
-        {/*color: '#fff',*/}
-      {/*}}*/}
-      {/*leftButtonIconStyle={{ tintColor: 'white' }}/>*/}
+    <Scene
+            key="messages"
+            component={Messages}
+            title="Mensagens"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key='notifications'
+            component={ Notification }
+            title="Notificações"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key='friendly'
+            component={ Friendly }
+            title="Indicação"
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
+      
+    <Scene
+            key="broker"
+            title="Brasal Corretora"
+            component={InsuranceCard}
+            hideNavBar={false}
+            navigationBarStyle={{backgroundColor: '#005c5b'}}
+            titleStyle={{
+              fontSize: 22,
+              color: '#fff',
+            }}
+            leftButtonIconStyle={{ tintColor: 'white' }}/>
   </Router>
 );

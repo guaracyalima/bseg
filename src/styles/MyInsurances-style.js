@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const css = StyleSheet.create({
   cardBoxOfInsurance: {
@@ -18,8 +18,12 @@ const css = StyleSheet.create({
     marginTop: 15,
   },
   iconOfInsurance: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    borderWidth: 3,
+    borderColor: '#B6BAB5',
+    marginTop: 7,
   },
   textOfNameOfInsurance: {
     fontSize: 18,
@@ -79,24 +83,40 @@ const css = StyleSheet.create({
     fontSize: 16,
   },
   insurerMinimalInformations: {
-    borderRadius: 30,
-    borderWidth: 1,
-    borderColor: '#00645D',
+    // borderRadius: 30,
+    // borderWidth: 1,
+    // borderColor: '#00645D',
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 10,
     marginRight: 10,
   },
+  
+  textAndYourBall: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  
+  circle_green: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    borderColor: '#005c5b',
+    borderWidth: 1,
+    backgroundColor: '#005c5b',
+    marginRight: 7,
+  },
   assetsAndInsurerInformations: {
     marginTop: 1,
     textAlign: 'center',
     backgroundColor: 'transparent',
-    fontWeight: '600',
-    fontFamily: 'arial',
-    color: '#B6BAB5',
+    fontWeight: '300',
+    // fontFamily: 'arial',
+    color: '#005c5b',
+    fontSize: 16,
   },
   viewOfApoliceNumberAnDates: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#ccc',
     alignItems: 'center',
   },
   merosMortais: {
@@ -111,6 +131,7 @@ const css = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     fontSize: 20,
+    color: '#005c5b',
     marginBottom: 3,
     marginTop: 10,
   },
@@ -131,10 +152,67 @@ const css = StyleSheet.create({
     margin: 0,
   },
   nameAndIconOfInsurance: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
+  
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 25,
+    padding: 10,
+    marginTop: 10,
+    backgroundColor: '#8ad57b',
+    width: 300,
+    height: 50,
+  },
+  
+  buttonClose: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 25,
+    padding: 10,
+    marginTop: 10,
+    backgroundColor: '#8ad57b',
+    width: 300,
+    height: 50,
+    marginLeft: 25,
+    marginRight: 18,
+    marginBottom: 7,
+  },
+  
+  details: {
+    backgroundColor: '#EFF0F4',
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 7,
+  },
+  
+  textLeft: {
+    alignItems: 'flex-start'
+  },
+  
+  textRigth: {
+    alignItems: 'flex-end'
+  },
+  
+  textLeftContent: {
+    color: '#858b94',
+    fontSize: 16,
+    margin: 8,
+  },
+  
+  textRigthContent: {
+    color: '#005c5b',
+    fontSize: 16,
+    margin: 8,
+  },
+  
+  theBatton: {
+    alignItems: 'center',
+    marginBottom: 15,
+  }
 });
 
 export default css;

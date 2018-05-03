@@ -237,7 +237,7 @@ export default class Messages extends Component {
             <View style={css.uploadButtons}>
               <View>
                 <TouchableOpacity underlayColor="#328fe6" onPress={this.selectPhotoTapped} style={css.uploadBtn}>
-                  <Text style={css.label}>ANEXAR FOTO</Text>
+                  <Text style={css.labelAttachment}>ANEXAR FOTO</Text>
                 </TouchableOpacity>
               </View>
     

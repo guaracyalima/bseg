@@ -39,6 +39,7 @@ const css = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#8ad57b',
     width: 320,
+    height: 50,
   },
   label: {
     width: 230,
@@ -46,7 +47,7 @@ const css = StyleSheet.create({
     textAlign: 'center',
     fontSize: 15,
     fontWeight: '600',
-    color: '#000',
+    color: '#111f00',
   },
   signup: {
     fontSize: 14,

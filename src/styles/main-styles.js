@@ -7,7 +7,7 @@ const css = StyleSheet.create({
   featured: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50
+    marginTop: 10
   },
   featuredImage: {
     marginTop: 50,
@@ -16,12 +16,12 @@ const css = StyleSheet.create({
     borderRadius: 20,
   },
   wellcomeClient: {
-    fontSize: 20,
+    fontSize: 22,
     marginTop: 40,
     backgroundColor: 'transparent',
     color: '#fff',
     fontWeight: '600',
-    marginBottom: 80
+    marginBottom: 40
   },
   threeBalls: {
     color: '#fff',
@@ -33,7 +33,7 @@ const css = StyleSheet.create({
     fontSize: 20
   },
   list_food: {
-    flex: 10
+    flex: 10,
   },
   list_food_item: {
     justifyContent: 'center',
@@ -45,15 +45,12 @@ const css = StyleSheet.create({
     width: 80,
     height: 80,
     margin: 10,
-    // borderWidth: 1,
-    // borderColor: '#fff',
-    // borderRadius: 50,
   },
   textOfDescriptionOfImage: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#fff',
     backgroundColor: 'transparent',
-    // marginTop: 
+    textAlign: 'center'
   },
   button: {
     justifyContent: 'center',
@@ -61,6 +58,7 @@ const css = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
+    marginBottom: 17,
     backgroundColor: '#8ad57b',
     width: 320,
   },
@@ -71,7 +69,16 @@ const css = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     color: '#000',
-  }
+  },
+  logo: {
+    marginTop: 70,
+    marginBottom: 40,
+  },
+  logoImage: {
+    width: 195,
+    height: 41,
+  },
+  
 });
 
 export default css

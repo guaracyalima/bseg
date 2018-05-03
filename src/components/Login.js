@@ -28,9 +28,12 @@ export default class Login extends Component {
 
   async auth() {
     await axios.post(`${api.apiUrl}/authenticate`, {
-    // await axios.post('https://api-seguradora-staging.herokuapp.com/api/authenticate', {
       email: this.state.email,
       password: this.state.password,
+      grant_type: 'password',
+      client_id: '1',
+      client_secret: 'c3cEQ9L7leTV4vnRbN8ehMmhjUdaSiGbys7xEn53',
+      scope: ''
     }).then((res) => {
       AsyncStorage.setItem('@MySuperStore:token', res.data.success.token);
       Actions.main();
@@ -56,7 +59,7 @@ export default class Login extends Component {
             style={css.input}
             value={this.state.email}
             onChangeText={email => this.setState({ email })}
-            placeholder="Usuario"
+            placeholder="Usuário"
             multiline={false}
             underlineColorAndroid="transparent"
             placeholderTextColor="#fff"
@@ -75,7 +78,7 @@ export default class Login extends Component {
           />
 
           <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.auth}>
-            <Text style={css.label}>ETRAR</Text>
+            <Text style={css.label}>ENTRAR</Text>
           </TouchableOpacity>
           
           <TouchableHighlight onPress={() => Actions.register()}>

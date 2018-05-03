@@ -4,11 +4,13 @@ import axios from 'axios';
 import {GiftedChat} from 'react-native-gifted-chat';
 import  Echo from 'laravel-echo';
 import SocketIOClient from 'socket.io-client';
+import { PlaySound, StopSound, PlaySoundRepeat, PlaySoundMusicVolume } from 'react-native-play-sound';
 import {api} from "../../../env";
 
 const logo = require('../../../assets/img/logo/logo.png');
+const alert_sound = require('../../../assets/sounds/new_client_message.mp3')
 export default class Attendance extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
@@ -21,12 +23,12 @@ export default class Attendance extends Component {
       options: '',
     };
   }
-  
+
   componentDidMount() {
     this.getToken();
     this.serverside();
   }
-  
+
   async getToken() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
     let options = {headers: {Authorization: `Bearer ${value}`}};
@@ -79,8 +81,8 @@ export default class Attendance extends Component {
       })
       .catch(error => console.log('erro ao trazer dados do usuario logado', error));
   }
-  
-  
+
+
   componentWillMount() {
     this.setState({
       messages: [
@@ -97,7 +99,7 @@ export default class Attendance extends Component {
       ],
     })
   }
-  
+
   onSend(messages) {
     let dataToSend = {
       message: messages[0].text,
@@ -106,17 +108,17 @@ export default class Attendance extends Component {
       user_id: this.state.user_id,
       attachment: ''
     }
-    
+
     axios.post(`${api.apiUrl}/liveconversation`, dataToSend, this.state.options)
       .then(res => console.log('Mensagem enviada', res))
       .catch(error => console.log('Erro ao enviar mensagem', error))
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))
-    
-    
+
+
   }
-  
+
   refreshMessages(m){
     let message = {
       _id: m.conversation.id,
@@ -133,27 +135,28 @@ export default class Attendance extends Component {
       messages: GiftedChat.append(previousState.messages, message),
     }))
   }
-  
+
   serverside(){
     window.Echo = new Echo({
       broadcaster: 'socket.io',
       client: SocketIOClient,
       host: 'http://localhost:6001',
     });
-    
-    
+
+
     window.Echo.channel('chat').listen('ChatEvent', e => {
       console.log('usuario logado', this.state.user_id)
       console.log('Mensagem vinda pelo evento', e)
       if(this.state.user_id !== e.conversation.user_id){
         this.refreshMessages(e)
+        PlaySound('jingle_bells_keyboard');
       }
-      
+
     })
   }
-  
+
   render() {
-    
+
     return (
       <GiftedChat
         messages={this.state.messages}

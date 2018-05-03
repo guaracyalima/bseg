@@ -62,7 +62,7 @@ export default class Row extends Component {
       >
         <View
           style={{
-            backgroundColor: '#FFBD18',
+            backgroundColor: '#8ad57b',
             flex: 1,
             margin: 14,
             borderRadius: 2,
@@ -76,8 +76,15 @@ export default class Row extends Component {
             }}
             onPress={onPress}
           >
-            <Text>
-              Fechar
+            <Text style={{
+              width: 230,
+              alignSelf: 'center',
+              textAlign: 'center',
+              fontSize: 18,
+              fontWeight: '600',
+              color: '#111f00',
+            }}>
+              FECHAR
             </Text>
           </TouchableHighlight>
 

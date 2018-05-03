@@ -54,8 +54,8 @@ export default class LifeInsurance extends Component {
   }
   
   _renderButton = (text, onPress) => (
-    <TouchableOpacity onPress={onPress}>
-      <View style={styles.button}>
+    <TouchableOpacity onPress={onPress} underlayColor="#328fe6" style={css.buttonClose}>
+      <View>
         <Text>{text}</Text>
       </View>
     </TouchableOpacity>
@@ -64,7 +64,7 @@ export default class LifeInsurance extends Component {
   _renderModalContent = () => (
     <View style={styles.modalContent}>
       
-      <ScrollView>
+      <ScrollView style={{marginLeft: 25,}}>
         <Text style={css.titlesOfDetailsOfInsurance}>Seguradora</Text>
         <Text>Seguradora: {this.props.item.insurer}</Text>
         <Text>Central de atendimento: {this.props.item.insurer}</Text>
@@ -104,31 +104,45 @@ export default class LifeInsurance extends Component {
           Seguro de Vida
         </Text>
       </View>
-      
+  
       <View style={css.insurerMinimalInformations}>
-        <Text style={css.assetsAndInsurerInformations}>
-          Segurado: {this.props.item.client.name}
-        </Text>
-        <Text style={css.assetsAndInsurerInformations}>
-          Seguradora: {this.props.item.insurer}
-        </Text>
+    
+        <View style={css.textAndYourBall}>
+          <View style={css.circle_green} />
+          <Text style={css.assetsAndInsurerInformations}>
+            Segurado: {this.props.item.client.name}
+          </Text>
+        </View>
+    
+        <View style={css.textAndYourBall}>
+          <View style={css.circle_green} />
+          <Text style={css.assetsAndInsurerInformations}>
+            Seguradora: {this.props.item.insurer}
+          </Text>
+        </View>
       </View>
-      
-      <View style={css.viewOfApoliceNumberAnDates}>
-        <Text style={css.merosMortais}>
-          Apolice: {this.props.item.apoliceNumber}
-        </Text>
-        <Text style={css.merosMortais}>
-          Final da vigencia: {this.props.item.validity}
-        </Text>
-        
-        <Button
-          title="COBERTURA"
-          accessibilityLabel={'Cobertura dos meus seguros'}
-          color={'#B6BAB5'}
+  
+      <View style={css.details}>
+        <View style={css.textLeft}>
+          <Text style={css.textLeftContent}> Apóice: {this.props.item.apoliceNumber} </Text>
+        </View>
+    
+        <View style={css.textRigth}>
+          <Text style={css.textRigthContent}>Vigência: {this.props.item.validity}</Text>
+        </View>
+  
+      </View>
+  
+      <View style={css.theBatton}>
+        <TouchableOpacity
+          style={css.button}
+          underlayColor="#328fe6"
           onPress={() => {
-            this.show(this.props.item.id), this.setState({ visibleModal: 7 }) //this.toggleModal(true)
-          }}/>
+            this.show(this.props.item.id),
+              this.setState({ visibleModal: 7 })
+          }}>
+          <Text style={css.label}>VISUALIZAR COBERTURA</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

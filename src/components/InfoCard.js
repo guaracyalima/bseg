@@ -48,21 +48,21 @@ export default ({ onPress }) => (
 
     <View style={styles.rightPane}>
       <View style={{ flex: 1, flexDirection: 'column' }}>
-        <Text>Seguros</Text>
+        {/*<Text>Seguros</Text>*/}
         <Text>Brasal Corretora</Text>
       </View>
 
-      <View style={{ flexDirection: 'row' }}>
-        <View style={{ flex: 1 }}>
-          <ThinGrayLine width={60} />
-          <ThickDarkGrayLine width={60} />
-        </View>
-
-        <View style={{ flex: 1 }}>
-          <ThinGrayLine width={60} />
-          <ThickDarkGrayLine width={60} />
-        </View>
-      </View>
+      {/*<View style={{ flexDirection: 'row' }}>*/}
+        {/*<View style={{ flex: 1 }}>*/}
+          {/*<ThinGrayLine width={60} />*/}
+          {/*<ThickDarkGrayLine width={60} />*/}
+        {/*</View>*/}
+      
+        {/*<View style={{ flex: 1 }}>*/}
+          {/*<ThinGrayLine width={60} />*/}
+          {/*<ThickDarkGrayLine width={60} />*/}
+        {/*</View>*/}
+      {/*</View>*/}
     </View>
 
   </View>

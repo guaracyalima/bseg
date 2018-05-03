@@ -20,7 +20,8 @@ class MyInsurances extends Component {
     };
   }
 
-  async componentWillMount() {
+  
+  async componentDidMount() {
     const value = await AsyncStorage.getItem('@MySuperStore:token');
     const options = { headers: { Authorization: `Bearer ${value}` } };
     await axios.get(`${api.apiUrl}/insured/${this.props.cpf}`, options)

@@ -17,7 +17,7 @@ export default class NotificationItem extends Component {
           <View style={css.messages} key={i.id}>
             <View>
               <Icon
-                name="alarm"
+                name="add-alert"
               />
             </View>
             <View style={css.messageHeader}>

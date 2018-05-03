@@ -11,7 +11,7 @@ import { ThickWhiteLine } from './Lines';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#33373B', // define o background do card inicial apos abertura
+    backgroundColor: '#00645D', // define o background do card inicial apos abertura
     padding: 10,
     flexDirection: 'column',
     marginTop: 80,

@@ -64,7 +64,7 @@ export default class Friendly extends Component {
           
   
           <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.__indicateFriendly}>
-            <Text style={css.label}>Enviar</Text>
+            <Text style={css.label}>ENVIAR</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -23,6 +23,7 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		16CA8B7335834418A7870C49 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D8AF7AE1F244CA383056F43 /* Ionicons.ttf */; };
+		18C9508E7A2B4DADA02665AB /* libPlaySound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C6B6D92E73464AAD3F8C7A /* libPlaySound.a */; };
 		1AE048C2A99B494A8560D26E /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4A4E33717D49179F87616D /* libBVLinearGradient.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -227,6 +228,13 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
+		54197F0A20910D0100E2B6DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FD1B81841E4153A2D054BB /* PlaySound.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E957A9331FE7A97E0009C115;
+			remoteInfo = PlaySound;
+		};
 		544210B720863BC30019A950 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 544210B320863BC30019A950 /* RCTOneSignal.xcodeproj */;
@@ -376,6 +384,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = eat_for_me/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = eat_for_me/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		26FD1B81841E4153A2D054BB /* PlaySound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = PlaySound.xcodeproj; path = "../node_modules/react-native-play-sound/PlaySound/PlaySound.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* eat_for_me-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eat_for_me-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* eat_for_me-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eat_for_me-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9BA6574A1310EA7122A81B /* Pods-eat_for_me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eat_for_me.release.xcconfig"; path = "Pods/Target Support Files/Pods-eat_for_me/Pods-eat_for_me.release.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +415,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		78EC9AD17EABBD9C7D6445C4 /* Pods-eat_for_meTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eat_for_meTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eat_for_meTests/Pods-eat_for_meTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C4A4E33717D49179F87616D /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
+		80C6B6D92E73464AAD3F8C7A /* libPlaySound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libPlaySound.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8A791879634B4FCB8C49DA7A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		8B0D828210994A6D9F860A5E /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -467,6 +477,7 @@
 				B6E5B87EB70B45309B3A952C /* libRCTOneSignal.a in Frameworks */,
 				9302A0C7DA884BBC99ED1A26 /* libRNFIRMessaging.a in Frameworks */,
 				9E8BFCF93A2FBC1025AE8B88 /* libPods-eat_for_me.a in Frameworks */,
+				18C9508E7A2B4DADA02665AB /* libPlaySound.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +628,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		54197F0720910D0000E2B6DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54197F0B20910D0100E2B6DB /* libPlaySound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		544210A120863A0D0019A950 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +723,7 @@
 				E62E646AE19C4BC585139AB8 /* libRNFetchBlob.a */,
 				B9080C1BA40E46A89BD23B2F /* libRCTOneSignal.a */,
 				0CBB9E9F551B41CFBCFAE48A /* libRNFIRMessaging.a */,
+				80C6B6D92E73464AAD3F8C7A /* libPlaySound.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -781,6 +801,7 @@
 				F515B93F8E064F0490E1971B /* RNFetchBlob.xcodeproj */,
 				FE971E1E110A4D4387EFDC10 /* RCTOneSignal.xcodeproj */,
 				09A866C151254D4A8A5A7086 /* RNFIRMessaging.xcodeproj */,
+				26FD1B81841E4153A2D054BB /* PlaySound.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -974,6 +995,10 @@
 				{
 					ProductGroup = 54BFFC522048786F00F63DD8 /* Products */;
 					ProjectRef = 556C35D4D0EE4711A6D989C1 /* BVLinearGradient.xcodeproj */;
+				},
+				{
+					ProductGroup = 54197F0720910D0000E2B6DB /* Products */;
+					ProjectRef = 26FD1B81841E4153A2D054BB /* PlaySound.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1212,6 +1237,13 @@
 			fileType = archive.ar;
 			path = libjschelpers.a;
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		54197F0B20910D0100E2B6DB /* libPlaySound.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPlaySound.a;
+			remoteRef = 54197F0A20910D0100E2B6DB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		544210B820863BC30019A950 /* libRCTOneSignal.a */ = {
@@ -1541,11 +1573,15 @@
 					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = eat_for_meTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1571,11 +1607,15 @@
 					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = eat_for_meTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1605,6 +1645,7 @@
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationsIOS/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/**",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = eat_for_me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1640,6 +1681,7 @@
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationsIOS/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/**",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = eat_for_me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1678,10 +1720,14 @@
 					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = "eat_for_me-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1716,10 +1762,14 @@
 					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fcm/ios",
+					"$(SRCROOT)/../node_modules/react-native-play-sound/PlaySound/PlaySound",
 				);
 				INFOPLIST_FILE = "eat_for_me-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1746,7 +1796,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "eat_for_me-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.eat_for_me-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1769,7 +1822,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "eat_for_me-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.eat_for_me-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;

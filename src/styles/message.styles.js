@@ -81,6 +81,16 @@ const css = StyleSheet.create({
     fontWeight: '600',
     color: '#000'
   },
+  
+  labelAttachment: {
+    width: 230,
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontSize: 14,
+    fontWeight: '300',
+    color: '#fff'
+  },
+  
   avatarContainer: {
     borderColor: '#9B9B9B',
     borderWidth: 1 / PixelRatio.get(),
@@ -100,10 +110,10 @@ const css = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 25,
-    borderColor: '#8ad57b',
+    borderColor: '#00645D',
     padding: 10,
     margin: 3,
-    backgroundColor: '#8ad57b',
+    backgroundColor: '#00645D',
     width: 130
   },
   avatarContainer: {

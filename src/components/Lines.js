@@ -76,8 +76,13 @@ export const ThickDarkGrayLine = (props) => (
 );
 
 export const ThinRedLine = (props) => (
-  <Text>
+  
+  <Text style={{
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#111f00',
+  }}>
     Detalhes
-    <ThinLine color={'#DB0000'} {...props} />
+    <ThinLine color={'#8ad57b'} {...props} />
   </Text>
 );

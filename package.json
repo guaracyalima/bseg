@@ -26,6 +26,7 @@
     "react-native-linear-gradient": "^2.4.0",
     "react-native-modal": "^5.3.0",
     "react-native-onesignal": "^3.1.4",
+    "react-native-play-sound": "^1.0.24",
     "react-native-push-notification": "^3.0.2",
     "react-native-router-flux": "^3.38.0",
     "react-native-snap-carousel": "^3.6.0",
