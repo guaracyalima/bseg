@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native'
+import {Dimensions, StyleSheet} from 'react-native';
+const { width } = Dimensions.get('window');
 const css = StyleSheet.create({
   main: {
     backgroundColor: '#005c5b',
@@ -10,18 +11,20 @@ const css = StyleSheet.create({
     marginTop: 10
   },
   featuredImage: {
-    marginTop: 50,
-    width: 330,
+    marginTop: 20,
+    width: (width - 30),
     height: 200,
     borderRadius: 20,
   },
   wellcomeClient: {
-    fontSize: 22,
-    marginTop: 40,
+    fontSize: 18,
+    width: (width - 25),
+    marginTop: 30,
     backgroundColor: 'transparent',
     color: '#fff',
     fontWeight: '600',
-    marginBottom: 40
+    marginBottom: 40,
+    textAlign: 'center',
   },
   threeBalls: {
     color: '#fff',
@@ -42,6 +45,7 @@ const css = StyleSheet.create({
     marginBottom: 20,
   },
   list_food_item_image: {
+    //width: (width - 90) / 3,
     width: 80,
     height: 80,
     margin: 10,
@@ -63,7 +67,7 @@ const css = StyleSheet.create({
     width: 320,
   },
   label: {
-    width: 230,
+    width: (width - 50),
     alignSelf: 'center',
     textAlign: 'center',
     fontSize: 15,
@@ -71,8 +75,8 @@ const css = StyleSheet.create({
     color: '#000',
   },
   logo: {
-    marginTop: 70,
-    marginBottom: 40,
+    marginTop: 50,
+    marginBottom: 20,
   },
   logoImage: {
     width: 195,

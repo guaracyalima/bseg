@@ -1,5 +1,5 @@
-import {PixelRatio, StyleSheet} from 'react-native';
-
+import {Dimensions, PixelRatio, StyleSheet} from 'react-native';
+const { width } = Dimensions.get('window');
 const css = StyleSheet.create({
   main: {
     backgroundColor: '#00645D',
@@ -60,8 +60,20 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: 'transparent',
     marginBottom: 15,
-    width: 320,
+    width: (width - 40 ),
   },
+  
+  textArea: {
+    height: 100,
+    borderWidth: 1,
+    marginBottom: 5,
+    padding: 10,
+    borderColor: '#fff',
+    borderRadius: 15,
+    backgroundColor: 'transparent',
+    width: (width - 40 ),
+  },
+  
   button: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -71,7 +83,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 60,
     backgroundColor: '#8ad57b',
-    width: 320
+    width: (width - 40 ),
   },
   label: {
     width: 230,

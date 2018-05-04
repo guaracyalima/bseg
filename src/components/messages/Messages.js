@@ -209,21 +209,12 @@ export default class Messages extends Component {
               value={this.state.subject}
               onChangeText={subject => this.setState({ subject })}
               placeholder="Assunto"
-              multiline={true}
+              multiline={false}
               underlineColorAndroid="transparent"
               placeholderTextColor="#fff"/>
   
             <View
-              style={{
-                height: 100,
-                borderWidth: 1,
-                marginBottom: 5,
-                padding: 10,
-                borderColor: '#fff',
-                borderRadius: 15,
-                backgroundColor: 'transparent',
-                width: 320,
-              }}>
+              style={css.textArea}>
               <TextArea
                         placeholder="Escreva sua mensagem"
                         style={css.input}

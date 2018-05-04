@@ -11,6 +11,7 @@ export default class NotificationItem extends Component {
   
   __renderMessage(){
     const { notification } = this.props
+    console.log('the notificat')
     if (notification !== 0) {
       return (
         notification.map( i => (
@@ -21,10 +22,10 @@ export default class NotificationItem extends Component {
               />
             </View>
             <View style={css.messageHeader}>
-              <Text style={css.titleOfNotification}>{i.user_id}</Text>
+              <Text style={css.titleOfNotification}>{i.title}</Text>
             </View>
             <View>
-              <Text style={css.shortDescription}>{i.message}</Text>
+              <Text style={css.shortDescription}>{i.content}</Text>
               <Text style={css.created_at}>{i.created_at}</Text>
             </View>
           </View>

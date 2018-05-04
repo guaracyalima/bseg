@@ -10,7 +10,7 @@ export const dev = {
 };
 
 export const api = {
-  apiUrl: 'http://127.0.0.1:8000/api',
+  apiUrl: 'http://api-bseg.brasal.com.br/api',
 };
 //apiUrl: 'http://127.0.0.1:8000/api',
 //apiUrl: 'https://api-seguradora-staging.herokuapp.com/api',

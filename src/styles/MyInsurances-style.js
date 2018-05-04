@@ -1,16 +1,16 @@
-import {StyleSheet} from 'react-native';
-
+import {Dimensions, StyleSheet} from 'react-native';
+const { width } = Dimensions.get('window');
 const css = StyleSheet.create({
   cardBoxOfInsurance: {
     backgroundColor: '#fff',
     marginTop: 10,
     borderRadius: 20,
-    marginLeft: 40,
-    marginRight: 40,
+    marginLeft: 20,
+    marginRight: 20,
     borderColor: '#000',
     shadowColor: '#000',
-    shadowRadius: 5,
-    shadowOpacity: 0.5,
+    shadowRadius: 7,
+    shadowOpacity: 0.3,
     shadowOffset: {width: 0, height: 1},
     flex: 1,
   },
@@ -164,7 +164,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 300,
+    width: (width - 90),
     height: 50,
   },
   
@@ -175,9 +175,9 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 300,
+    width: (width - 90),
     height: 50,
-    marginLeft: 25,
+    marginLeft: 18,
     marginRight: 18,
     marginBottom: 7,
   },

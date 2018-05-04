@@ -38,6 +38,25 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>api-bseg.brasal.com.br</key>
+			<dict>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<true/>
+				<key>NSThirdPartyExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSRequiresCertificateTransparency</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>api-seguradora-staging.herokuapp.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

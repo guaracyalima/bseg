@@ -30,7 +30,7 @@ export default class Notification extends Component {
     const { client } = this.state;
     if (client !== 0) {
       return (
-        client.map( item => <NotificationItem key={item.id} item={item} notification={item.notification}/> )
+        client.map( item => <NotificationItem key={item.id} item={item} notification={item.alerts}/> )
       )
     }
     return false;

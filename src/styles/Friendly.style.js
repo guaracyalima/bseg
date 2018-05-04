@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+const { width } = Dimensions.get('window');
 
 const css = StyleSheet.create({
   container: {
@@ -22,7 +23,7 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     marginBottom: 8,
-    width: 320,
+    width: (width - 40),
   },
   
   button: {
@@ -32,7 +33,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     backgroundColor: '#8ad57b',
-    width: 300,
+    width: (width - 40),
     height: 50,
   },
   

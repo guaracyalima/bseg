@@ -52,7 +52,6 @@ export default ({ onPress }) => (
           paddingBottom: 0,
         }}
       >
-        <Text style={styles.emailAndPhone}>(61) 3962.6655</Text>
         <Text style={styles.emailAndPhone}>brasalcorretora@brasal.com.br</Text>
       </View>
     </View>

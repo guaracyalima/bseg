@@ -6,7 +6,6 @@ import {
   TextInput,
   Button,
   Image,
-  ImageBackground,
   TouchableOpacity,
   TouchableHighlight,
   StatusBar,
@@ -20,20 +19,24 @@ import {api} from "../../env";
 const logo = require('../../assets/img/logo/fq.png');
 const bg = require('../../assets/img/bg/login/login.jpg');
 
-export default class Register extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: '', email: '', password: '' };
-    this.auth = this.register.bind(this);
+    this.state = { email: '', password: '' };
+    this.auth = this.auth.bind(this);
   }
   
-  async register() {
-    await axios.post(`${api.apiUrl}/register`, {
+  async auth() {
+    await axios.post(`${api.apiUrl}/authenticate`, {
       email: this.state.email,
       password: this.state.password,
+      grant_type: 'password',
+      client_id: '1',
+      client_secret: 'c3cEQ9L7leTV4vnRbN8ehMmhjUdaSiGbys7xEn53',
+      scope: ''
     }).then((res) => {
         AsyncStorage.setItem('@MySuperStore:token', res.data.success.token);
-        Actions.login();
+        Actions.main();
       })
       .catch((err) => {
         console.log('Erro ao se logar', err);
@@ -42,14 +45,14 @@ export default class Register extends Component {
   
   render() {
     return (
-      <ImageBackground source={bg} style={css.bg}>
+      <Image source={bg} style={css.bg}>
         <StatusBar  barStyle="light-content" />
         <View style={css.loginCotainer}>
-          
+      
           <View style={css.logo}>
             <Image source={logo} style={css.logoImage} />
           </View>
-          
+      
           <TextInput
             style={css.input}
             value={this.state.name}
@@ -58,7 +61,7 @@ export default class Register extends Component {
             multiline={false}
             placeholderTextColor="#fff"
           />
-          
+      
           <TextInput
             style={css.input}
             value={this.state.email}
@@ -67,7 +70,7 @@ export default class Register extends Component {
             multiline={false}
             placeholderTextColor="#fff"
           />
-          
+      
           <TextInput
             style={css.input}
             value={this.state.password}
@@ -78,16 +81,16 @@ export default class Register extends Component {
             multiline={false}
             placeholderTextColor="#fff"
           />
-          
+      
           <TouchableOpacity style={css.button} underlayColor="#328fe6" onPress={this.register}>
-            <Text style={css.label}>Cadastrar</Text>
+            <Text style={css.label}>CADASTRAR</Text>
           </TouchableOpacity>
-          
+      
           <TouchableHighlight onPress={() => Actions.login()}>
             <Text style={css.signup}> Ja possuo casdastro</Text>
           </TouchableHighlight>
         </View>
-      </ImageBackground>
+      </Image>
     );
   }
 }
