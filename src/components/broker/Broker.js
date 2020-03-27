@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, StatusBar, View } from 'react-native';
+import { ScrollView, StyleSheet, StatusBar, View, AsyncStorage } from 'react-native';
 import axios from 'axios';
-import BrokerItems from "./BrokerItem";
+import BrokerItems from './BrokerItem';
 
 class Broker extends Component {
   constructor(props) {
@@ -9,14 +9,16 @@ class Broker extends Component {
     this.state = { listaItems: [] };
   }
 
-  componentWillMount() {
-    axios.get('http://127.0.0.1:8000/api/broker')
+  async componentWillMount() {
+    const value = await AsyncStorage.getItem('@MySuperStore:token');
+    axios.get('http://127.0.0.1:8000/api/broker', { headers: { Authorization: `Bearer ${value}` } })
       .then((response) => {
         this.setState({ listaItems: response.data });
-        console.log(response.data);
+        console.log('itmes in the list', this.state.listaItems)
       })
       .catch(err => console.log('erro ao trazer dados', err));
   }
+
   render() {
     return (
       <ScrollView style={css.main}>
@@ -24,9 +26,7 @@ class Broker extends Component {
           barStyle="light-content"
         />
         <View style={css.viewOfRenderItemsInContextBox}>
-          { this.state.listaItems.map(
-            item => (<BrokerItems key={item.id} item={item} /> )
-          ) }
+          { this.state.listaItems.map(item => (<BrokerItems key={item.id} item={item} />)) }
         </View>
       </ScrollView>
     );
